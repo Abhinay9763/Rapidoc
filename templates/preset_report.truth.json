@@ -1,0 +1,64 @@
+{
+  "nodes": [
+    {
+      "node_id": "n_001",
+      "role": "section_heading",
+      "section": "Abstract",
+      "formatting": { "bold": true, "font": "Times New Roman", "size_pt": 14, "alignment": "left" }
+    },
+    {
+      "node_id": "n_002",
+      "role": "body_paragraph",
+      "section": "Abstract",
+      "formatting": { "bold": false, "font": "Times New Roman", "size_pt": 12, "alignment": "justify" }
+    },
+    {
+      "node_id": "n_003",
+      "role": "section_heading",
+      "section": "Introduction",
+      "formatting": { "bold": true, "font": "Times New Roman", "size_pt": 14, "alignment": "left" }
+    },
+    {
+      "node_id": "n_004",
+      "role": "body_paragraph",
+      "section": "Introduction",
+      "formatting": { "bold": false, "font": "Times New Roman", "size_pt": 12, "alignment": "justify" }
+    },
+    {
+      "node_id": "n_005",
+      "role": "section_heading",
+      "section": "Methodology",
+      "formatting": { "bold": true, "font": "Times New Roman", "size_pt": 14, "alignment": "left" }
+    },
+    {
+      "node_id": "n_006",
+      "role": "body_paragraph",
+      "section": "Methodology",
+      "formatting": { "bold": false, "font": "Times New Roman", "size_pt": 12, "alignment": "justify" }
+    },
+    {
+      "node_id": "n_007",
+      "role": "section_heading",
+      "section": "Results",
+      "formatting": { "bold": true, "font": "Times New Roman", "size_pt": 14, "alignment": "left" }
+    },
+    {
+      "node_id": "n_008",
+      "role": "body_paragraph",
+      "section": "Results",
+      "formatting": { "bold": false, "font": "Times New Roman", "size_pt": 12, "alignment": "justify" }
+    },
+    {
+      "node_id": "n_009",
+      "role": "section_heading",
+      "section": "Conclusion",
+      "formatting": { "bold": true, "font": "Times New Roman", "size_pt": 14, "alignment": "left" }
+    },
+    {
+      "node_id": "n_010",
+      "role": "body_paragraph",
+      "section": "Conclusion",
+      "formatting": { "bold": false, "font": "Times New Roman", "size_pt": 12, "alignment": "justify" }
+    }
+  ]
+}

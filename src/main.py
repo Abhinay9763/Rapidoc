@@ -6,11 +6,15 @@ from PySide6.QtWidgets import (
     QHBoxLayout, QSplitter, QTextEdit, QLineEdit, 
     QPushButton, QMessageBox, QLabel
 )
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QTimer
 
 from doc_viewer import DocViewer
 from agent_worker import AgentWorker
 from pdf_export import export_to_pdf
+from dotenv import load_dotenv
+from logger import log
+
+load_dotenv()
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -25,11 +29,17 @@ class MainWindow(QMainWindow):
         
         # Splitter
         self.splitter = QSplitter(Qt.Horizontal)
+        self.splitter.setStyleSheet("QSplitter::handle { background-color: #cccccc; width: 4px; }")
         main_layout.addWidget(self.splitter)
         
         # Left Pane: Document Viewer
+        self.left_pane = QWidget()
+        left_layout = QVBoxLayout(self.left_pane)
+        left_layout.setContentsMargins(0, 0, 0, 0)
+        
         self.doc_viewer = DocViewer()
-        self.splitter.addWidget(self.doc_viewer)
+        left_layout.addWidget(self.doc_viewer)
+        self.splitter.addWidget(self.left_pane)
         
         # Right Pane: Chat Interface
         self.chat_panel = QWidget()
@@ -39,6 +49,10 @@ class MainWindow(QMainWindow):
         self.chat_history = QTextEdit()
         self.chat_history.setReadOnly(True)
         chat_layout.addWidget(self.chat_history)
+        
+        self.agent_status_label = QLabel("")
+        self.agent_status_label.setStyleSheet("color: #0078D7; font-style: italic;")
+        chat_layout.addWidget(self.agent_status_label)
         
         # Input area
         input_layout = QHBoxLayout()
@@ -70,12 +84,17 @@ class MainWindow(QMainWindow):
         # Let's wait until it's loaded to trigger the first render
         self.doc_viewer.web_view.loadFinished.connect(self.on_viewer_loaded)
         
+        # Heartbeat timer to poll the document and render it every 5 seconds
+        self.heartbeat_timer = QTimer(self)
+        self.heartbeat_timer.timeout.connect(self.poll_document)
+        self.heartbeat_timer.start(100)
+        
     def on_viewer_loaded(self, ok):
         if ok:
-            print("Web view loaded, rendering docx...")
+            log.info("Web view loaded, rendering docx...")
             self.doc_viewer.render_docx(self.docx_path)
         else:
-            print("Failed to load web view.")
+            log.error("Failed to load web view.")
 
     def send_message(self):
         text = self.chat_input.text().strip()
@@ -95,20 +114,33 @@ class MainWindow(QMainWindow):
         self.worker.agent_finished.connect(self.on_agent_finished)
         self.worker.agent_error.connect(self.on_agent_error)
         self.worker.agent_response.connect(self.on_agent_response)
-        self.worker.document_updated.connect(self.on_document_updated)
+        self.worker.agent_stream_chat.connect(self.on_agent_stream_chat)
         
         self.worker.start()
         
     def append_chat(self, sender: str, message: str):
-        self.chat_history.append(f"<b>{sender}:</b> {message}")
+        import datetime
+        now = datetime.datetime.now().strftime("%H:%M")
+        self.chat_history.append(f"<hr><div style='color:gray; font-size:10px;'>{now}</div><b>{sender}:</b> {message}")
         
     def on_agent_started(self):
-        pass # UI already disabled
+        import datetime
+        now = datetime.datetime.now().strftime("%H:%M")
+        self.chat_history.append(f"<hr><div style='color:gray; font-size:10px;'>{now}</div><b>Agent:</b> ")
+        self.agent_status_label.setText("Agent is working...")
+        
+    def on_agent_stream_chat(self, chunk: str):
+        cursor = self.chat_history.textCursor()
+        cursor.movePosition(cursor.MoveOperation.End)
+        self.chat_history.setTextCursor(cursor)
+        self.chat_history.insertPlainText(chunk)
+        self.chat_history.verticalScrollBar().setValue(self.chat_history.verticalScrollBar().maximum())
         
     def on_agent_finished(self):
         self.chat_input.setEnabled(True)
         self.send_button.setEnabled(True)
         self.chat_input.setFocus()
+        self.agent_status_label.setText("")
         
     def on_agent_error(self, err_msg: str):
         self.append_chat("System Error", err_msg)
@@ -116,7 +148,7 @@ class MainWindow(QMainWindow):
     def on_agent_response(self, response: str):
         self.append_chat("Agent", response)
         
-    def on_document_updated(self):
+    def poll_document(self):
         self.doc_viewer.render_docx(self.docx_path)
         
     def export_pdf(self):
@@ -128,13 +160,9 @@ class MainWindow(QMainWindow):
         def run_export():
             try:
                 pdf_path = export_to_pdf(self.docx_path, output_dir)
-                # Ensure UI updates happen on main thread using a lambda and QMetaObject.invokeMethod
-                # However, for simplicity, since it's a short thread, we can use QApplication.invokeLater or just standard Qt signals.
-                # To keep it simple, we'll just show a message box on main thread via a signal or direct call (which can be unsafe, but okay for a stub)
-                print(f"Exported to {pdf_path}")
-                # We should re-enable the button safely. For Phase 1, calling a basic print is safe.
+                log.info(f"Exported to {pdf_path}")
             except Exception as e:
-                print(f"Export Error: {e}")
+                log.error(f"Export Error: {e}")
 
             
         # Run export in background thread so UI doesn't freeze
@@ -180,6 +208,14 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    
+    # Load stylesheet
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    style_path = os.path.join(os.path.dirname(current_dir), 'assets', 'style.qss')
+    if os.path.exists(style_path):
+        with open(style_path, 'r', encoding='utf-8') as f:
+            app.setStyleSheet(f.read())
+            
     window = MainWindow()
     window.show()
     sys.exit(app.exec())

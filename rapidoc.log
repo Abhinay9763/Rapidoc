@@ -1,0 +1,103 @@
+2026-08-13 16:32:34,170 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 16:32:44,406 - rapidoc - INFO - AgentWorker started for topic: help
+2026-08-13 16:32:44,406 - rapidoc - INFO - Starting orchestration for topic: help
+2026-08-13 16:32:44,413 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 16:32:45,088 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 16:32:45,637 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-13 16:32:47,202 - rapidoc - INFO - Generating section 4/5: Results
+2026-08-13 16:32:47,570 - rapidoc - ERROR - Error generating section Results: [Errno 22] Invalid argument: 'C:\\Users\\AK-07\\Documents\\Dev\\Rapidoc\\assets\\sample.docx'
+2026-08-13 16:32:47,571 - rapidoc - INFO - Generating section 5/5: Conclusion
+2026-08-13 16:32:48,097 - rapidoc - INFO - Orchestration complete.
+2026-08-13 16:32:48,097 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-13 16:43:13,440 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 16:43:43,964 - rapidoc - INFO - AgentWorker started for topic: make a report on eggs
+2026-08-13 16:43:43,969 - rapidoc - ERROR - Error: Docx file not found: C:\Users\AK-07\Documents\Dev\Rapidoc\assets\sample.docx
+2026-08-13 16:43:43,995 - rapidoc - INFO - Starting orchestration for topic: make a report on eggs
+2026-08-13 16:43:44,004 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 16:43:48,156 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 16:43:53,431 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-13 16:43:55,823 - rapidoc - ERROR - Safe save failed: [WinError 5] Access is denied: 'C:\\Users\\AK-07\\Documents\\Dev\\Rapidoc\\assets\\sample.docx.tmp' -> 'C:\\Users\\AK-07\\Documents\\Dev\\Rapidoc\\assets\\sample.docx'
+2026-08-13 16:44:00,896 - rapidoc - INFO - Generating section 4/5: Results
+2026-08-13 16:44:21,728 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 16:48:27,125 - rapidoc - INFO - AgentWorker started for topic: hello
+2026-08-13 16:48:27,126 - rapidoc - ERROR - AgentWorker error: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\AK-07\\Documents\\Dev\\Rapidoc\\assets\\sample.docx'
+2026-08-13 16:53:37,721 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 16:53:57,422 - rapidoc - INFO - AgentWorker started for topic: make the results of egg experiment
+2026-08-13 16:53:59,344 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 16:53:59,546 - rapidoc - INFO - Starting orchestration for topic: make the results of egg experiment
+2026-08-13 16:53:59,555 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 16:54:03,138 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 16:54:06,274 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 16:54:09,440 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 16:54:14,197 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 16:54:17,958 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-13 16:54:24,131 - rapidoc - INFO - Generating section 4/5: Results
+2026-08-13 16:54:31,800 - rapidoc - INFO - Generating section 5/5: Conclusion
+2026-08-13 16:54:37,134 - rapidoc - INFO - Orchestration complete.
+2026-08-13 16:54:37,134 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-13 17:14:59,238 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 17:15:33,182 - rapidoc - INFO - AgentWorker started for topic: generate a report on Rapido
+2026-08-13 17:15:33,207 - rapidoc - ERROR - Error: Docx file not found: C:\Users\AK-07\Documents\Dev\Rapidoc\assets\sample.docx
+2026-08-13 17:15:33,210 - rapidoc - INFO - Starting orchestration for topic: generate a report on Rapido
+2026-08-13 17:15:33,216 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 17:15:37,426 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 17:15:44,189 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-13 17:17:09,941 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 17:17:12,239 - rapidoc - INFO - AgentWorker started for topic: help
+2026-08-13 17:17:12,261 - rapidoc - INFO - Starting orchestration for topic: help
+2026-08-13 17:17:12,266 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 17:18:20,941 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 17:18:23,738 - rapidoc - INFO - AgentWorker started for topic: report on quantum
+2026-08-13 17:18:23,769 - rapidoc - INFO - Starting orchestration for topic: report on quantum
+2026-08-13 17:18:23,769 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 17:18:28,997 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 17:20:05,505 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 17:20:08,001 - rapidoc - INFO - AgentWorker started for topic: report on quantum
+2026-08-13 17:20:09,078 - rapidoc - INFO - Starting orchestration for topic: report on quantum
+2026-08-13 17:20:09,082 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 17:20:09,111 - rapidoc - ERROR - Export Error: LibreOffice conversion failed.
+Stdout: 
+Stderr: 
+2026-08-13 17:20:54,971 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 17:21:49,643 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-13 17:22:48,306 - rapidoc - INFO - Generating section 4/5: Results
+2026-08-13 17:23:57,505 - rapidoc - INFO - Generating section 5/5: Conclusion
+2026-08-13 17:25:25,345 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 17:32:21,604 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 17:32:30,081 - rapidoc - INFO - AgentWorker started for topic: make a report on quantum tech
+2026-08-13 17:32:32,027 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:32:32,231 - rapidoc - INFO - Starting orchestration for topic: make a report on quantum tech
+2026-08-13 17:32:32,233 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 17:32:44,734 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:32:56,852 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:33:08,991 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:33:20,128 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:33:20,329 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 17:33:32,596 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:34:14,699 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 17:34:20,488 - rapidoc - INFO - AgentWorker started for topic: make the report on quantum tech
+2026-08-13 17:34:22,422 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:34:22,625 - rapidoc - INFO - Starting orchestration for topic: make the report on quantum tech
+2026-08-13 17:34:22,629 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 17:34:25,508 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:34:28,049 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:34:30,561 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:34:33,181 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:34:35,568 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-13 17:34:35,776 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 17:34:38,081 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-13 17:34:40,936 - rapidoc - INFO - Generating section 4/5: Results
+2026-08-13 17:34:43,356 - rapidoc - INFO - Generating section 5/5: Conclusion
+2026-08-13 17:34:46,628 - rapidoc - INFO - Orchestration complete.
+2026-08-13 17:34:46,628 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-13 17:35:04,594 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 17:48:20,861 - rapidoc - INFO - Exported to C:\Users\AK-07\Documents\Dev\Rapidoc\assets\sample.pdf
+2026-08-13 17:48:25,239 - rapidoc - INFO - AgentWorker started for topic: make the project report on quantum tech
+2026-08-13 17:48:25,264 - rapidoc - INFO - Starting orchestration for topic: make the project report on quantum tech
+2026-08-13 17:48:25,270 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 17:48:27,929 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 17:48:30,813 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-13 17:48:33,471 - rapidoc - INFO - Generating section 4/5: Results
+2026-08-13 17:48:36,293 - rapidoc - INFO - Generating section 5/5: Conclusion
+2026-08-13 17:48:39,176 - rapidoc - INFO - Orchestration complete.
+2026-08-13 17:48:39,185 - rapidoc - INFO - AgentWorker completed successfully.
