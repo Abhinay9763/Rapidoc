@@ -9,6 +9,10 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from logger import log
 from truth_loader import load_truth
 import shutil
+from dotenv import load_dotenv
+from diagram_agent import generate_and_insert_diagram
+
+load_dotenv()
 
 class AgentState(TypedDict):
     topic: str
@@ -145,11 +149,26 @@ def generate_and_write_section(state: AgentState):
                         
         # Final save for this section
         _safe_save(doc, docx_path)
-        
+
+        # --- Diagram injection ---
+        # After the section text is written, ask Groq if a diagram is needed.
+        # If yes, generate it (chart or UML flowchart) and insert it into the
+        # document immediately after this section's content.
+        try:
+            diagram_inserted = generate_and_insert_diagram(
+                section_heading=section_name,
+                section_content=doc_text,
+                docx_path=docx_path,
+            )
+            if diagram_inserted:
+                log.info(f"Diagram inserted for section: {section_name}")
+        except Exception as diag_err:
+            log.warning(f"Diagram step skipped for '{section_name}': {diag_err}")
+
     except Exception as e:
         log.error(f"Error generating section {section_name}: {e}")
         doc_text = f"[Content generation failed for {section_name}: {e}]"
-        
+
     return {"current_section_index": idx + 1, "generated_text": doc_text}
 
 def router(state: AgentState):

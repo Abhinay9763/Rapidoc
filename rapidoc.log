@@ -101,3 +101,159 @@ Stderr:
 2026-08-13 17:48:36,293 - rapidoc - INFO - Generating section 5/5: Conclusion
 2026-08-13 17:48:39,176 - rapidoc - INFO - Orchestration complete.
 2026-08-13 17:48:39,185 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-13 19:27:13,848 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:13,920 - rapidoc - ERROR - Failed to load web view.
+2026-08-13 19:27:13,929 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:14,046 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:14,156 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:14,269 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:14,366 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:14,478 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:14,591 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:14,703 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:14,816 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:14,916 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:15,027 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:15,140 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:15,252 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:15,364 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:15,460 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:15,572 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:15,683 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:15,795 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:15,907 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:16,019 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:16,131 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:16,226 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:16,339 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:16,451 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:16,563 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:16,675 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:16,787 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:16,883 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:16,994 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:17,106 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:17,218 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:17,329 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:17,441 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:17,554 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:17,665 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:17,778 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:17,889 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:18,001 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:18,114 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:18,210 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:18,321 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:18,434 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:18,546 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:18,657 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:18,770 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:18,882 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:18,994 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:19,106 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:19,218 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:19,330 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:19,441 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:19,553 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:19,665 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:19,778 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:19,890 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:20,002 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:20,114 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:20,210 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:20,322 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:20,433 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:20,544 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:20,656 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:20,767 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:20,879 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:20,976 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:21,088 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:21,199 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:21,311 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:21,422 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:21,534 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:21,646 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:21,742 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:21,853 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:21,966 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:22,079 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:22,183 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:22,296 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:22,404 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:22,511 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:22,627 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:22,727 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:22,845 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:22,944 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:23,058 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:23,163 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:23,273 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:23,382 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:23,491 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:23,609 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:23,711 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:23,820 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:23,940 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:24,039 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:24,161 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:24,261 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:24,373 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:24,484 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:24,594 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:24,695 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:24,811 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:24,913 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:25,026 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:25,135 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:25,252 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:25,351 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:25,465 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:25,570 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:25,685 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:25,797 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:25,908 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:26,020 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:26,116 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:26,227 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:26,339 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:26,452 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:26,563 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:27:26,707 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 19:31:05,601 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 19:31:24,895 - rapidoc - INFO - AgentWorker started for topic: make the flow chart of this ?
+2026-08-13 19:31:24,937 - rapidoc - INFO - Starting orchestration for topic: make the flow chart of this ?
+2026-08-13 19:31:24,942 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 19:31:27,641 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 19:31:30,520 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-13 19:31:33,554 - rapidoc - INFO - Generating section 4/5: Results
+2026-08-13 19:31:35,847 - rapidoc - INFO - Generating section 5/5: Conclusion
+2026-08-13 19:31:38,216 - rapidoc - INFO - Orchestration complete.
+2026-08-13 19:31:38,217 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-13 21:30:00,988 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-13 21:30:22,804 - rapidoc - INFO - AgentWorker started for topic: insert a flowchart of round robin algo
+2026-08-13 21:30:22,837 - rapidoc - INFO - Starting orchestration for topic: insert a flowchart of round robin algo
+2026-08-13 21:30:22,885 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 21:30:30,199 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 21:30:35,000 - rapidoc - INFO - Diagram inserted for section: Introduction
+2026-08-13 21:30:35,002 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-13 21:30:42,446 - rapidoc - INFO - Diagram inserted for section: Methodology
+2026-08-13 21:30:42,447 - rapidoc - INFO - Generating section 4/5: Results
+2026-08-13 21:30:48,760 - rapidoc - INFO - Diagram inserted for section: Results
+2026-08-13 21:30:48,761 - rapidoc - INFO - Generating section 5/5: Conclusion
+2026-08-13 21:30:55,705 - rapidoc - INFO - Orchestration complete.
+2026-08-13 21:30:55,705 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-13 21:31:24,962 - rapidoc - ERROR - Export Error: LibreOffice not found at: C:\Program Files\LibreOffice\program\soffice.exe. Please install LibreOffice or verify the path.
+2026-08-13 21:31:41,805 - rapidoc - INFO - AgentWorker started for topic: make a normal distribution graph
+2026-08-13 21:31:41,815 - rapidoc - ERROR - Error: Docx file not found: C:\Users\bokin\OneDrive\Desktop\Rapidoc\assets\sample.docx
+2026-08-13 21:31:41,828 - rapidoc - INFO - Starting orchestration for topic: make a normal distribution graph
+2026-08-13 21:31:41,829 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-13 21:31:45,008 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-13 21:31:50,744 - rapidoc - INFO - Diagram inserted for section: Introduction
+2026-08-13 21:31:50,745 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-13 21:31:54,708 - rapidoc - INFO - Diagram inserted for section: Methodology
+2026-08-13 21:31:54,709 - rapidoc - INFO - Generating section 4/5: Results
+2026-08-13 21:31:58,343 - rapidoc - INFO - Diagram inserted for section: Results
+2026-08-13 21:31:58,344 - rapidoc - INFO - Generating section 5/5: Conclusion
+2026-08-13 21:32:02,298 - rapidoc - INFO - Orchestration complete.
+2026-08-13 21:32:02,299 - rapidoc - INFO - AgentWorker completed successfully.
