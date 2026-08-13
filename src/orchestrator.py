@@ -173,6 +173,7 @@ class AgentState(TypedDict):
     truth_nodes: list
     section_groups: list
     is_template: bool
+    original_para_count: int
 
 
 # --- Graph node --------------------------------------------------------------
@@ -207,10 +208,13 @@ def generate_and_write_section(state: AgentState):
         
         # Build the index map if we are using an uploaded template
         all_paras = get_all_paragraphs(doc) if state.get("is_template") else []
+        shift = len(all_paras) - state.get("original_para_count", 0) if state.get("is_template") else 0
 
         # Write heading using run-aware helper
         if heading_node:
             p_idx = heading_node.get("position", {}).get("index")
+            if p_idx is not None:
+                p_idx += shift
             existing = all_paras[p_idx] if all_paras and p_idx is not None and p_idx < len(all_paras) else None
             write_paragraph_node(doc, heading_node, text=section_name, existing_p=existing)
 
@@ -218,6 +222,8 @@ def generate_and_write_section(state: AgentState):
         body_existing = None
         if body_node:
             p_idx = body_node.get("position", {}).get("index")
+            if p_idx is not None:
+                p_idx += shift
             body_existing = all_paras[p_idx] if all_paras and p_idx is not None and p_idx < len(all_paras) else None
             
         body_p, body_run = write_paragraph_node(doc, body_node or {}, text="", existing_p=body_existing)
@@ -227,6 +233,8 @@ def generate_and_write_section(state: AgentState):
         if len(all_body_nodes) > 1:
             for extra_node in all_body_nodes[1:]:
                 p_idx = extra_node.get("position", {}).get("index")
+                if p_idx is not None:
+                    p_idx += shift
                 if all_paras and p_idx is not None and p_idx < len(all_paras):
                     _clear_paragraph_text(all_paras[p_idx])  # Safe clear — preserves page breaks
                     
@@ -340,12 +348,13 @@ def run_full_generation(
 
     truth_nodes, source_template = load_truth(truth_path)
 
-    # Collect unique generatable sections (skip figure/metadata/boilerplate)
+    # Collect unique generatable sections (skip figure/metadata/boilerplate and TOC entries)
     section_groups = []
     for node in truth_nodes:
         section = node.get("section")
         role = node.get("role", "")
-        if section and role in ("section_heading", "body_paragraph") and section not in section_groups:
+        # Filter out TOC entries (which typically contain tab characters like 'CHAPTER 1\t01')
+        if section and "\t" not in section and role in ("section_heading", "body_paragraph") and section not in section_groups:
             section_groups.append(section)
 
     if not section_groups:
@@ -363,6 +372,7 @@ def run_full_generation(
             pass
 
     is_template = False
+    original_para_count = 0
     if source_template and os.path.exists(source_template):
         # We have an uploaded template! Copy it so we preserve page size, margins, and page borders.
         shutil.copy2(source_template, docx_path)
@@ -371,6 +381,7 @@ def run_full_generation(
         _img_doc = Document(docx_path)
         _strip_images(_img_doc)
         _safe_save(_img_doc, docx_path)
+        original_para_count = len(get_all_paragraphs(_img_doc))
     else:
         # Fallback to default blank document
         _safe_save(Document(), docx_path)
@@ -385,7 +396,8 @@ def run_full_generation(
         doc_updated_callback=doc_updated_callback,
         truth_nodes=truth_nodes,
         section_groups=section_groups,
-        is_template=is_template
+        is_template=is_template,
+        original_para_count=original_para_count
     )
 
     log.info(f"Starting orchestration — topic: {topic!r}, sections: {section_groups}")
