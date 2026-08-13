@@ -1,0 +1,78 @@
+/* RapiDoc Dark Theme */
+
+QMainWindow, QWidget {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Chat History */
+QTextEdit {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+    border: none;
+    font-size: 14px;
+    padding: 10px;
+    selection-background-color: #264F78;
+}
+
+/* Chat Input */
+QLineEdit {
+    background-color: #2D2D2D;
+    color: #D4D4D4;
+    border: 1px solid #3C3C3C;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+}
+QLineEdit:focus {
+    border: 1px solid #007ACC;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #0E639C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: #1177BB;
+}
+QPushButton:pressed {
+    background-color: #094771;
+}
+QPushButton:disabled {
+    background-color: #3C3C3C;
+    color: #888888;
+}
+
+/* Splitter */
+QSplitter::handle {
+    background-color: #333333;
+    width: 2px;
+}
+QSplitter::handle:hover {
+    background-color: #007ACC;
+}
+
+/* Scrollbars */
+QScrollBar:vertical {
+    border: none;
+    background: #1E1E1E;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #424242;
+    min-height: 20px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #4F4F4F;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
