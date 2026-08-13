@@ -42,91 +42,147 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("RapiDoc")
-        self.resize(1200, 750)
-        self.active_truth_path = None  # None = preset path; str = uploaded truth.json
+        self.resize(1300, 800)
+        self.active_truth_path = None
         self.current_section = None
-        
-        # Central widget and layout
+
+        # ── Central widget ──────────────────────────────────────────
         central_widget = QWidget()
+        central_widget.setObjectName("centralWidget")
         self.setCentralWidget(central_widget)
-        main_layout = QVBoxLayout(central_widget)
-        
-        # Splitter
+        root_layout = QVBoxLayout(central_widget)
+        root_layout.setContentsMargins(0, 0, 0, 0)
+        root_layout.setSpacing(0)
+
+        # ── Header bar ──────────────────────────────────────────────
+        header = QWidget()
+        header.setObjectName("headerPanel")
+        header_layout = QHBoxLayout(header)
+        header_layout.setContentsMargins(18, 0, 18, 0)
+
+        title_block = QVBoxLayout()
+        title_block.setSpacing(1)
+        app_title = QLabel("⚡ RapiDoc")
+        app_title.setObjectName("appTitle")
+        app_subtitle = QLabel("AI-powered document generation")
+        app_subtitle.setObjectName("appSubtitle")
+        title_block.addWidget(app_title)
+        title_block.addWidget(app_subtitle)
+        header_layout.addLayout(title_block)
+        header_layout.addStretch()
+
+        # Template badge in header
+        self.template_label = QLabel("No template loaded")
+        self.template_label.setObjectName("templateBadge")
+        header_layout.addWidget(self.template_label)
+
+        root_layout.addWidget(header)
+
+        # ── Main content (splitter) ─────────────────────────────────
         self.splitter = QSplitter(Qt.Horizontal)
-        self.splitter.setStyleSheet("QSplitter::handle { background-color: #cccccc; width: 4px; }")
-        main_layout.addWidget(self.splitter)
-        
-        # Left Pane: Document Viewer
-        self.left_pane = QWidget()
-        left_layout = QVBoxLayout(self.left_pane)
+        root_layout.addWidget(self.splitter)
+
+        # ── LEFT: Document Viewer ───────────────────────────────────
+        left_pane = QWidget()
+        left_pane.setObjectName("viewerPane")
+        left_layout = QVBoxLayout(left_pane)
         left_layout.setContentsMargins(0, 0, 0, 0)
-        
+        left_layout.setSpacing(0)
+
+        # Viewer header strip
+        viewer_header = QWidget()
+        viewer_header.setObjectName("viewerHeader")
+        vh_layout = QHBoxLayout(viewer_header)
+        vh_layout.setContentsMargins(14, 0, 14, 0)
+        viewer_title = QLabel("DOCUMENT PREVIEW")
+        viewer_title.setObjectName("viewerTitle")
+        vh_layout.addWidget(viewer_title)
+        vh_layout.addStretch()
+
         self.doc_viewer = DocViewer()
+        left_layout.addWidget(viewer_header)
         left_layout.addWidget(self.doc_viewer)
-        self.splitter.addWidget(self.left_pane)
-        
-        # Right Pane: Chat Interface
-        self.chat_panel = QWidget()
-        chat_layout = QVBoxLayout(self.chat_panel)
-        
+        self.splitter.addWidget(left_pane)
+
+        # ── RIGHT: Chat Pane ────────────────────────────────────────
+        chat_pane = QWidget()
+        chat_pane.setObjectName("chatPane")
+        chat_layout = QVBoxLayout(chat_pane)
+        chat_layout.setContentsMargins(0, 0, 0, 0)
+        chat_layout.setSpacing(0)
+
+        # Section progress strip
+        section_strip = QWidget()
+        section_strip.setObjectName("viewerHeader")   # reuse same look
+        section_strip_layout = QHBoxLayout(section_strip)
+        section_strip_layout.setContentsMargins(14, 0, 14, 0)
+        self.agent_status_label = QLabel("")
+        self.agent_status_label.setObjectName("statusLabel")
+        section_strip_layout.addWidget(self.agent_status_label)
+        section_strip_layout.addStretch()
+        chat_layout.addWidget(section_strip)
+
         # Chat history
         self.chat_history = QTextEdit()
+        self.chat_history.setObjectName("chatHistory")
         self.chat_history.setReadOnly(True)
-        chat_layout.addWidget(self.chat_history)
-        
-        self.agent_status_label = QLabel("")
-        self.agent_status_label.setStyleSheet("color: #0078D7; font-style: italic;")
-        chat_layout.addWidget(self.agent_status_label)
-        
+        chat_layout.addWidget(self.chat_history, stretch=1)
+
         # Input area
-        input_layout = QHBoxLayout()
+        input_area = QWidget()
+        input_area.setObjectName("inputArea")
+        input_layout = QHBoxLayout(input_area)
+        input_layout.setContentsMargins(12, 10, 12, 10)
+        input_layout.setSpacing(8)
+
         self.chat_input = QLineEdit()
-        self.chat_input.setPlaceholderText("Type your instruction here...")
+        self.chat_input.setObjectName("chatInput")
+        self.chat_input.setPlaceholderText("Describe your document topic here...")
         self.chat_input.returnPressed.connect(self.send_message)
         input_layout.addWidget(self.chat_input)
-        
-        self.send_button = QPushButton("Send")
+
+        self.send_button = QPushButton("Generate")
+        self.send_button.setObjectName("sendButton")
         self.send_button.clicked.connect(self.send_message)
         input_layout.addWidget(self.send_button)
-        chat_layout.addLayout(input_layout)
-        
-        # Bottom buttons row
-        bottom_layout = QHBoxLayout()
+        chat_layout.addWidget(input_area)
 
-        self.load_template_button = QPushButton("Load Template")
+        # Toolbar (load/export)
+        toolbar = QWidget()
+        toolbar.setObjectName("toolbar")
+        toolbar_layout = QHBoxLayout(toolbar)
+        toolbar_layout.setContentsMargins(12, 8, 12, 8)
+        toolbar_layout.setSpacing(8)
+
+        self.load_template_button = QPushButton("📂  Load Template")
         self.load_template_button.setObjectName("loadTemplateButton")
         self.load_template_button.clicked.connect(self.load_template)
-        bottom_layout.addWidget(self.load_template_button)
+        toolbar_layout.addWidget(self.load_template_button)
 
-        self.export_button = QPushButton("Export PDF")
+        self.export_button = QPushButton("⬇  Export PDF")
+        self.export_button.setObjectName("exportButton")
         self.export_button.clicked.connect(self.export_pdf)
-        bottom_layout.addWidget(self.export_button)
+        toolbar_layout.addWidget(self.export_button)
 
-        chat_layout.addLayout(bottom_layout)
+        toolbar_layout.addStretch()
+        chat_layout.addWidget(toolbar)
 
-        # Active template label
-        self.template_label = QLabel("Template: Preset")
-        self.template_label.setStyleSheet("color: gray; font-size: 11px;")
-        chat_layout.addWidget(self.template_label)
-        
-        self.splitter.addWidget(self.chat_panel)
-        
-        # Initial proportions
-        self.splitter.setSizes([600, 400])
-        
-        # Document setup
+        self.splitter.addWidget(chat_pane)
+
+        # Proportions: 65% viewer, 35% chat
+        self.splitter.setSizes([845, 455])
+
+        # ── Document setup ──────────────────────────────────────────
         current_dir = os.path.dirname(os.path.abspath(__file__))
         self.docx_path = os.path.join(os.path.dirname(current_dir), 'assets', 'sample.docx')
-        
-        # We need to give the QWebEngineView time to load the HTML shell before we send the initial render
-        # Let's wait until it's loaded to trigger the first render
+
         self.doc_viewer.web_view.loadFinished.connect(self.on_viewer_loaded)
-        
-        # Heartbeat timer to poll the document and render it every 5 seconds
+
+        # Heartbeat: re-render every 750ms (not 100ms — far less CPU spam)
         self.heartbeat_timer = QTimer(self)
         self.heartbeat_timer.timeout.connect(self.poll_document)
-        self.heartbeat_timer.start(100)
-        
+        self.heartbeat_timer.start(750)
+
     def on_viewer_loaded(self, ok):
         if ok:
             log.info("Web view loaded, rendering docx...")
@@ -154,6 +210,7 @@ class MainWindow(QMainWindow):
         self.worker.agent_response.connect(self.on_agent_response)
         self.worker.agent_stream_chat.connect(self.on_agent_stream_chat)
         self.worker.agent_section_changed.connect(self.on_agent_section_changed)
+        self.worker.agent_doc_updated.connect(self.on_doc_updated)
 
         self.worker.start()
         
@@ -165,8 +222,10 @@ class MainWindow(QMainWindow):
     def on_agent_started(self):
         import datetime
         now = datetime.datetime.now().strftime("%H:%M")
-        self.chat_history.append(f"<hr><div style='color:gray; font-size:10px;'>{now}</div><b>Agent:</b> ")
-        self.agent_status_label.setText("Agent is working...")
+        self.chat_history.append(f"<hr><div style='color:#4f46e5; font-size:10px;'>{now}</div><b style='color:#a5b4fc'>⚡ RapiDoc:</b> ")
+        self.agent_status_label.setText("⚡ Generating...")
+        # Stop the heartbeat — the doc_updated signal will drive renders instead
+        self.heartbeat_timer.stop()
         
     def on_agent_stream_chat(self, chunk: str):
         cursor = self.chat_history.textCursor()
@@ -179,8 +238,14 @@ class MainWindow(QMainWindow):
         self.chat_input.setEnabled(True)
         self.send_button.setEnabled(True)
         self.chat_input.setFocus()
-        self.agent_status_label.setText("")
+        self.agent_status_label.setText("✅ Generation complete")
         self.current_section = None
+        # Restart the heartbeat now that generation is done
+        self.heartbeat_timer.start(750)
+
+    def on_doc_updated(self):
+        """Called after every incremental docx save during streaming — re-renders immediately."""
+        self.doc_viewer.render_docx(self.docx_path, self.current_section)
         
     def on_agent_error(self, err_msg: str):
         self.append_chat("System Error", err_msg)
@@ -192,6 +257,7 @@ class MainWindow(QMainWindow):
         
     def on_agent_section_changed(self, section_name: str):
         self.current_section = section_name
+        self.agent_status_label.setText(f"✍ Writing: {section_name}")
 
     def poll_document(self):
         self.doc_viewer.render_docx(self.docx_path, self.current_section)
@@ -208,7 +274,7 @@ class MainWindow(QMainWindow):
 
         self.load_template_button.setEnabled(False)
         self.load_template_button.setText("Analyzing...")
-        self.append_chat("System", f"Loading template: {os.path.basename(path)}")
+        self.append_chat("System", f"🔍 Analyzing template: {os.path.basename(path)}...")
 
         templates_dir = os.path.join(current_dir, 'templates')
         self._upload_worker = UploadWorker(path, templates_dir)
@@ -221,18 +287,26 @@ class MainWindow(QMainWindow):
 
     def _on_template_loaded(self, truth_path: str):
         self.active_truth_path = truth_path
-        name = os.path.basename(truth_path)
-        self.template_label.setText(f"Template: {name}")
-        self.append_chat("System", f"Template analyzed successfully. Using: {name}")
+        # Show a human-friendly name — strip the UUID hash suffix
+        basename = os.path.basename(truth_path).replace(".truth.json", "")
+        # e.g. "uploaded_20260814_011206_baf03dad" → "Uploaded 2026-08-14"
+        parts = basename.split("_")
+        if len(parts) >= 2 and parts[0] == "uploaded":
+            date_part = parts[1]
+            friendly = f"Template: {date_part[:4]}-{date_part[4:6]}-{date_part[6:8]}"
+        else:
+            friendly = f"Template: {basename}"
+        self.template_label.setText(friendly)
+        self.append_chat("System", f"✅ Template analyzed. Ready to generate.")
         self.agent_status_label.setText("")
-        self.load_template_button.setText("Load Template")
+        self.load_template_button.setText("📂  Load Template")
         self.load_template_button.setEnabled(True)
         log.info(f"Active truth.json set to: {truth_path}")
 
     def _on_template_error(self, err: str):
-        self.append_chat("System Error", f"Template analysis failed: {err}")
+        self.append_chat("System Error", f"❌ Template analysis failed: {err}")
         self.agent_status_label.setText("")
-        self.load_template_button.setText("Load Template")
+        self.load_template_button.setText("📂  Load Template")
         self.load_template_button.setEnabled(True)
         
     def export_pdf(self):

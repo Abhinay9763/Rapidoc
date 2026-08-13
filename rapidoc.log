@@ -3589,3 +3589,187 @@ Stderr:
 2026-08-14 00:46:01,101 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
 2026-08-14 00:46:03,390 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
 2026-08-14 00:46:05,671 - rapidoc - ERROR - Safe save failed: Access denied after 10 retries.
+2026-08-14 00:51:36,384 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 00:51:39,713 - rapidoc - INFO - Upload pipeline starting for: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 00:51:39,713 - rapidoc - INFO - Parsing template: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 00:51:39,911 - rapidoc - INFO - Parsed 259 records from template (259 paragraphs, 0 table cells)
+2026-08-14 00:51:39,911 - rapidoc - INFO - Built 21 formatting clusters from 259 records
+2026-08-14 00:51:40,088 - rapidoc - INFO - Classifying cluster 1/21 (count=3, style='Body Text', samples=['A'])
+2026-08-14 00:51:40,477 - rapidoc - INFO -   - role=metadata_field (confidence=high), field_key=student_name
+2026-08-14 00:51:40,477 - rapidoc - INFO - Classifying cluster 2/21 (count=3, style='Heading 3', samples=['Process Scheduling'])
+2026-08-14 00:51:40,906 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 00:51:40,906 - rapidoc - INFO - Classifying cluster 3/21 (count=1, style='Normal', samples=['Submitted for partial fulfillment of the requirements for the award of the degree of'])
+2026-08-14 00:51:41,354 - rapidoc - INFO -   - role=static_boilerplate (confidence=high)
+2026-08-14 00:51:41,354 - rapidoc - INFO - Classifying cluster 4/21 (count=124, style='Body Text', samples=['UGC AUTONOMOUS'])
+2026-08-14 00:51:41,496 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 00:51:41,496 - rapidoc - INFO - Classifying cluster 5/21 (count=2, style='Normal', samples=['JUNE- 2026'])
+2026-08-14 00:51:41,654 - rapidoc - INFO -   - role=metadata_field (confidence=high), field_key=date
+2026-08-14 00:51:41,654 - rapidoc - INFO - Classifying cluster 6/21 (count=1, style='Normal', samples=['(empty)'])
+2026-08-14 00:51:41,795 - rapidoc - INFO -   - role=other (confidence=high)
+2026-08-14 00:51:41,795 - rapidoc - INFO - Classifying cluster 7/21 (count=3, style='Heading 4', samples=['DECLARATION'])
+2026-08-14 00:51:41,942 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 00:51:41,942 - rapidoc - INFO - Classifying cluster 8/21 (count=2, style='Normal', samples=['This is to certify that the project titled “Process Scheduling” is being submitted by Darshil Mishra (24K81A05L7) in fulfillment of the requirement for the award of degree of BACHELOR OF TECHNOLOGY IN COMPUTER SCIENCE AND ENGINEERING is recorded of bonafide work carried out by them. The result embodied in this report have been verified and found satisfactory.'])
+2026-08-14 00:51:42,258 - rapidoc - ERROR - Cluster 8 classification failed: Extra data: line 2 column 1 (char 79). Defaulting to 'body_paragraph'.
+2026-08-14 00:51:42,258 - rapidoc - INFO - Classifying cluster 9/21 (count=3, style='Normal', samples=['.'])
+2026-08-14 00:51:42,413 - rapidoc - INFO -   - role=static_boilerplate (confidence=high)
+2026-08-14 00:51:42,413 - rapidoc - INFO - Classifying cluster 10/21 (count=6, style='Normal', samples=['(empty)'])
+2026-08-14 00:51:42,558 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 00:51:42,558 - rapidoc - INFO - Classifying cluster 11/21 (count=4, style='Normal', samples=['Darshil Mishra(24K81A05L7)'])
+2026-08-14 00:51:42,721 - rapidoc - INFO -   - role=metadata_field (confidence=high), field_key=student_name
+2026-08-14 00:51:42,721 - rapidoc - INFO - Classifying cluster 12/21 (count=24, style='Body Text', samples=['First and foremost, I would like to express our deep sense of gratitude and indebtedness to our College Management for their kind support and permission to use the facilities available in the Institut'])
+2026-08-14 00:51:42,869 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 00:51:42,869 - rapidoc - INFO - Classifying cluster 13/21 (count=1, style='Heading 1', samples=['CONTENTS'])
+2026-08-14 00:51:43,023 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 00:51:43,023 - rapidoc - INFO - Classifying cluster 14/21 (count=11, style='Normal', samples=['CHAPTER 8- OUTPUT\t08'])
+2026-08-14 00:51:43,173 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 00:51:43,173 - rapidoc - INFO - Classifying cluster 15/21 (count=11, style='Heading 2', samples=['OUTPUT'])
+2026-08-14 00:51:43,337 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 00:51:43,338 - rapidoc - INFO - Classifying cluster 16/21 (count=4, style='Heading 4', samples=['Scope :'])
+2026-08-14 00:51:46,586 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 00:51:46,587 - rapidoc - INFO - Classifying cluster 17/21 (count=47, style='List Paragraph', samples=['William Stallings'])
+2026-08-14 00:51:49,803 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 00:51:49,803 - rapidoc - INFO - Classifying cluster 18/21 (count=4, style='List Paragraph', samples=['(empty)'])
+2026-08-14 00:51:54,113 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 00:51:54,127 - rapidoc - INFO - Classifying cluster 19/21 (count=1, style='Heading 4', samples=['Hardware Requirements'])
+2026-08-14 00:51:57,734 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 00:51:57,735 - rapidoc - INFO - Classifying cluster 20/21 (count=3, style='List Paragraph', samples=['8 GB RAM or more.'])
+2026-08-14 00:52:01,116 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 00:52:01,116 - rapidoc - INFO - Classifying cluster 21/21 (count=1, style='Heading 5', samples=['Software Requirements'])
+2026-08-14 00:52:04,321 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 00:52:04,346 - rapidoc - INFO - truth.json written to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_005204_baf03dad.truth.json
+2026-08-14 00:52:04,349 - rapidoc - INFO - Summary: 35 section headings, 210 body paragraphs, 9 metadata fields, 4 static boilerplates, 23 figures, 1 others
+2026-08-14 00:52:04,349 - rapidoc - INFO - Upload pipeline complete in 24.6s - C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_005204_baf03dad.truth.json
+2026-08-14 00:52:04,351 - rapidoc - INFO - Active truth.json set to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_005204_baf03dad.truth.json
+2026-08-14 00:52:16,261 - rapidoc - INFO - AgentWorker started — topic: 'make a project report on cars', truth_path: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_005204_baf03dad.truth.json
+2026-08-14 00:52:16,281 - rapidoc - ERROR - AgentWorker error: [WinError 32] The process cannot access the file because it is being used by another process
+2026-08-14 00:52:18,988 - rapidoc - INFO - AgentWorker started — topic: 'make a project report on cars', truth_path: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_005204_baf03dad.truth.json
+2026-08-14 00:52:19,048 - rapidoc - INFO - Starting orchestration — topic: 'make a project report on cars', sections: ['Process Scheduling', "St. MARTIN'S ENGINEERING COLLEGE", 'CERTIFICATE', 'DECLARATION', 'Acknowledgement', 'CONTENTS', 'CHAPTER 1-ABSTRACT\t01', 'CHAPTER 2-INTRODUCTION\t02', 'CHAPTER 3- LITERATURE SURVEY\t03', 'CHAPTER 4- SYSTEM ANALYSIS\t04', 'CHAPTER 5- SYSTEM REQUIREMENTS\t05', 'CHAPTER 6- ALGORITHM\t06', 'CHAPTER 7- SYSTEM IMPLEMENTATION\t07', 'CHAPTER 8- OUTPUT\t08', 'CHAPTER 9-CONCLUSION\t09', 'CHAPTER 10-FUTURE ENHANCEMENTS\t10', 'CHAPTER 11-REFERENCES\t11', 'ABSTRACT', 'INTRODUCTION', 'Objectives :', 'Scope :', 'LITERATURE SURVEY', 'SYSTEM ANALYSIS', 'Existing System', 'Proposed System', 'SYSTEM REQUIREMENTS', 'Hardware Requirements', 'Software Requirements', 'ALGORITHM', 'SYSTEM IMPLEMENTATION', 'OUTPUT', 'CONCLUSION', 'FUTURE ENHANCEMENTS', 'REFERENCES']
+2026-08-14 00:52:19,054 - rapidoc - INFO - Generating section 1/34: Process Scheduling
+2026-08-14 00:52:22,894 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Process Scheduling' (Images branch not yet merged)
+2026-08-14 00:52:22,895 - rapidoc - INFO - Generating section 2/34: St. MARTIN'S ENGINEERING COLLEGE
+2026-08-14 00:52:30,846 - rapidoc - DEBUG - diagram_inserter: stub called for section 'St. MARTIN'S ENGINEERING COLLEGE' (Images branch not yet merged)
+2026-08-14 00:52:30,847 - rapidoc - INFO - Generating section 3/34: CERTIFICATE
+2026-08-14 00:52:35,786 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CERTIFICATE' (Images branch not yet merged)
+2026-08-14 00:52:35,787 - rapidoc - INFO - Generating section 4/34: DECLARATION
+2026-08-14 00:52:40,640 - rapidoc - DEBUG - diagram_inserter: stub called for section 'DECLARATION' (Images branch not yet merged)
+2026-08-14 00:52:40,640 - rapidoc - INFO - Generating section 5/34: Acknowledgement
+2026-08-14 00:52:45,291 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Acknowledgement' (Images branch not yet merged)
+2026-08-14 00:52:45,292 - rapidoc - INFO - Generating section 6/34: CONTENTS
+2026-08-14 00:52:55,007 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CONTENTS' (Images branch not yet merged)
+2026-08-14 00:52:55,007 - rapidoc - INFO - Generating section 7/34: CHAPTER 1-ABSTRACT	01
+2026-08-14 00:53:00,821 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 1-ABSTRACT	01' (Images branch not yet merged)
+2026-08-14 00:53:00,821 - rapidoc - INFO - Generating section 8/34: CHAPTER 2-INTRODUCTION	02
+2026-08-14 00:53:03,883 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 2-INTRODUCTION	02' (Images branch not yet merged)
+2026-08-14 00:53:03,884 - rapidoc - INFO - Generating section 9/34: CHAPTER 3- LITERATURE SURVEY	03
+2026-08-14 00:53:11,050 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 3- LITERATURE SURVEY	03' (Images branch not yet merged)
+2026-08-14 00:53:11,052 - rapidoc - INFO - Generating section 10/34: CHAPTER 4- SYSTEM ANALYSIS	04
+2026-08-14 00:53:16,287 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 4- SYSTEM ANALYSIS	04' (Images branch not yet merged)
+2026-08-14 00:53:16,287 - rapidoc - INFO - Generating section 11/34: CHAPTER 5- SYSTEM REQUIREMENTS	05
+2026-08-14 00:53:24,498 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 5- SYSTEM REQUIREMENTS	05' (Images branch not yet merged)
+2026-08-14 00:53:24,499 - rapidoc - INFO - Generating section 12/34: CHAPTER 6- ALGORITHM	06
+2026-08-14 00:53:29,221 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 6- ALGORITHM	06' (Images branch not yet merged)
+2026-08-14 00:53:29,221 - rapidoc - INFO - Generating section 13/34: CHAPTER 7- SYSTEM IMPLEMENTATION	07
+2026-08-14 00:53:34,267 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 7- SYSTEM IMPLEMENTATION	07' (Images branch not yet merged)
+2026-08-14 00:53:34,268 - rapidoc - INFO - Generating section 14/34: CHAPTER 8- OUTPUT	08
+2026-08-14 00:53:39,807 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 8- OUTPUT	08' (Images branch not yet merged)
+2026-08-14 00:53:39,808 - rapidoc - INFO - Generating section 15/34: CHAPTER 9-CONCLUSION	09
+2026-08-14 00:53:46,310 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 9-CONCLUSION	09' (Images branch not yet merged)
+2026-08-14 00:53:46,311 - rapidoc - INFO - Generating section 16/34: CHAPTER 10-FUTURE ENHANCEMENTS	10
+2026-08-14 00:53:51,903 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 10-FUTURE ENHANCEMENTS	10' (Images branch not yet merged)
+2026-08-14 00:53:51,903 - rapidoc - INFO - Generating section 17/34: CHAPTER 11-REFERENCES	11
+2026-08-14 00:53:56,763 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CHAPTER 11-REFERENCES	11' (Images branch not yet merged)
+2026-08-14 00:53:56,764 - rapidoc - INFO - Generating section 18/34: ABSTRACT
+2026-08-14 00:54:02,586 - rapidoc - DEBUG - diagram_inserter: stub called for section 'ABSTRACT' (Images branch not yet merged)
+2026-08-14 00:54:02,586 - rapidoc - INFO - Generating section 19/34: INTRODUCTION
+2026-08-14 00:54:06,833 - rapidoc - DEBUG - diagram_inserter: stub called for section 'INTRODUCTION' (Images branch not yet merged)
+2026-08-14 00:54:06,835 - rapidoc - INFO - Generating section 20/34: Objectives :
+2026-08-14 00:54:10,298 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Objectives :' (Images branch not yet merged)
+2026-08-14 00:54:10,299 - rapidoc - INFO - Generating section 21/34: Scope :
+2026-08-14 00:54:14,909 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Scope :' (Images branch not yet merged)
+2026-08-14 00:54:14,910 - rapidoc - INFO - Generating section 22/34: LITERATURE SURVEY
+2026-08-14 00:54:20,055 - rapidoc - DEBUG - diagram_inserter: stub called for section 'LITERATURE SURVEY' (Images branch not yet merged)
+2026-08-14 00:54:20,055 - rapidoc - INFO - Generating section 23/34: SYSTEM ANALYSIS
+2026-08-14 00:54:24,530 - rapidoc - DEBUG - diagram_inserter: stub called for section 'SYSTEM ANALYSIS' (Images branch not yet merged)
+2026-08-14 00:54:24,531 - rapidoc - INFO - Generating section 24/34: Existing System
+2026-08-14 00:54:30,397 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Existing System' (Images branch not yet merged)
+2026-08-14 00:54:30,398 - rapidoc - INFO - Generating section 25/34: Proposed System
+2026-08-14 00:54:35,664 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Proposed System' (Images branch not yet merged)
+2026-08-14 00:54:35,664 - rapidoc - INFO - Generating section 26/34: SYSTEM REQUIREMENTS
+2026-08-14 00:54:42,669 - rapidoc - DEBUG - diagram_inserter: stub called for section 'SYSTEM REQUIREMENTS' (Images branch not yet merged)
+2026-08-14 00:54:42,669 - rapidoc - INFO - Generating section 27/34: Hardware Requirements
+2026-08-14 00:54:45,970 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Hardware Requirements' (Images branch not yet merged)
+2026-08-14 00:54:45,970 - rapidoc - INFO - Generating section 28/34: Software Requirements
+2026-08-14 00:54:50,213 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Software Requirements' (Images branch not yet merged)
+2026-08-14 00:54:50,214 - rapidoc - INFO - Generating section 29/34: ALGORITHM
+2026-08-14 00:54:57,155 - rapidoc - DEBUG - diagram_inserter: stub called for section 'ALGORITHM' (Images branch not yet merged)
+2026-08-14 00:54:57,156 - rapidoc - INFO - Generating section 30/34: SYSTEM IMPLEMENTATION
+2026-08-14 00:55:02,589 - rapidoc - DEBUG - diagram_inserter: stub called for section 'SYSTEM IMPLEMENTATION' (Images branch not yet merged)
+2026-08-14 00:55:02,589 - rapidoc - INFO - Generating section 31/34: OUTPUT
+2026-08-14 00:55:08,216 - rapidoc - DEBUG - diagram_inserter: stub called for section 'OUTPUT' (Images branch not yet merged)
+2026-08-14 00:55:08,217 - rapidoc - INFO - Generating section 32/34: CONCLUSION
+2026-08-14 00:55:13,424 - rapidoc - DEBUG - diagram_inserter: stub called for section 'CONCLUSION' (Images branch not yet merged)
+2026-08-14 00:55:13,425 - rapidoc - INFO - Generating section 33/34: FUTURE ENHANCEMENTS
+2026-08-14 00:55:17,434 - rapidoc - DEBUG - diagram_inserter: stub called for section 'FUTURE ENHANCEMENTS' (Images branch not yet merged)
+2026-08-14 00:55:17,434 - rapidoc - INFO - Generating section 34/34: REFERENCES
+2026-08-14 00:55:24,368 - rapidoc - DEBUG - diagram_inserter: stub called for section 'REFERENCES' (Images branch not yet merged)
+2026-08-14 00:55:24,368 - rapidoc - INFO - Orchestration complete.
+2026-08-14 00:55:24,369 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-14 01:11:29,396 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 01:11:47,448 - rapidoc - INFO - Upload pipeline starting for: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 01:11:47,448 - rapidoc - INFO - Parsing template: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 01:11:47,602 - rapidoc - INFO - Parsed 180 records from template (180 paragraphs, 0 table cells)
+2026-08-14 01:11:47,602 - rapidoc - INFO - Built 13 formatting clusters from 180 records
+2026-08-14 01:11:48,126 - rapidoc - INFO - Classifying cluster 1/13 (count=1, style='Heading 1', samples=['CONTENTS'])
+2026-08-14 01:11:50,039 - rapidoc - ERROR - Cluster 1 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:11:50,039 - rapidoc - INFO - Classifying cluster 2/13 (count=11, style='Normal', samples=['CHAPTER 8- OUTPUT\t08'])
+2026-08-14 01:11:51,433 - rapidoc - ERROR - Cluster 2 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:11:51,458 - rapidoc - INFO - Classifying cluster 3/13 (count=2, style='Normal', samples=['(empty)'])
+2026-08-14 01:11:52,715 - rapidoc - ERROR - Cluster 3 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:11:52,715 - rapidoc - INFO - Classifying cluster 4/13 (count=11, style='Heading 2', samples=['OUTPUT'])
+2026-08-14 01:11:54,204 - rapidoc - ERROR - Cluster 4 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:11:54,204 - rapidoc - INFO - Classifying cluster 5/13 (count=18, style='Body Text', samples=["The system should be configured to run on a 64-bit operating system to ensure compatibility with the project's dependencies and libraries. It is also recommended to use a 4K or higher resolution displ"])
+2026-08-14 01:11:55,527 - rapidoc - ERROR - Cluster 5 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:11:55,528 - rapidoc - INFO - Classifying cluster 6/13 (count=76, style='Body Text', samples=['Wiley Publications.'])
+2026-08-14 01:11:56,906 - rapidoc - ERROR - Cluster 6 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:11:56,906 - rapidoc - INFO - Classifying cluster 7/13 (count=4, style='Heading 4', samples=['Scope :'])
+2026-08-14 01:11:58,275 - rapidoc - ERROR - Cluster 7 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:11:58,277 - rapidoc - INFO - Classifying cluster 8/13 (count=47, style='List Paragraph', samples=['William Stallings'])
+2026-08-14 01:11:59,646 - rapidoc - ERROR - Cluster 8 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:11:59,646 - rapidoc - INFO - Classifying cluster 9/13 (count=4, style='List Paragraph', samples=['(empty)'])
+2026-08-14 01:12:00,935 - rapidoc - ERROR - Cluster 9 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:12:00,935 - rapidoc - INFO - Classifying cluster 10/13 (count=1, style='Heading 4', samples=['Hardware Requirements'])
+2026-08-14 01:12:02,232 - rapidoc - ERROR - Cluster 10 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:12:02,233 - rapidoc - INFO - Classifying cluster 11/13 (count=3, style='List Paragraph', samples=['8 GB RAM or more.'])
+2026-08-14 01:12:03,751 - rapidoc - ERROR - Cluster 11 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:12:03,753 - rapidoc - INFO - Classifying cluster 12/13 (count=1, style='Heading 5', samples=['Software Requirements'])
+2026-08-14 01:12:05,120 - rapidoc - ERROR - Cluster 12 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:12:05,120 - rapidoc - INFO - Classifying cluster 13/13 (count=1, style='Normal', samples=['.'])
+2026-08-14 01:12:06,429 - rapidoc - ERROR - Cluster 13 classification failed: Connection error.. Defaulting to 'body_paragraph'.
+2026-08-14 01:12:06,438 - rapidoc - INFO - truth.json written to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_011206_baf03dad.truth.json
+2026-08-14 01:12:06,438 - rapidoc - INFO - Summary: 180 body paragraphs
+2026-08-14 01:12:06,439 - rapidoc - INFO - Upload pipeline complete in 19.0s - C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_011206_baf03dad.truth.json
+2026-08-14 01:12:06,442 - rapidoc - INFO - Active truth.json set to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_011206_baf03dad.truth.json
+2026-08-14 02:09:06,883 - rapidoc - INFO - AgentWorker started — topic: 'a report on clash royale', truth_path: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_011206_baf03dad.truth.json
+2026-08-14 02:09:06,944 - rapidoc - INFO - Starting orchestration — topic: 'a report on clash royale', sections: []
+2026-08-14 02:09:07,021 - rapidoc - ERROR - AgentWorker error: list index out of range
+2026-08-14 02:09:18,648 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 02:09:47,873 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 02:16:30,465 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 02:16:54,466 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 02:22:17,820 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 02:22:32,824 - rapidoc - INFO - AgentWorker started — topic: 'make it look good', truth_path: preset
+2026-08-14 02:22:32,861 - rapidoc - INFO - Starting orchestration — topic: 'make it look good', sections: ['Abstract', 'Introduction', 'Methodology', 'Results', 'Conclusion']
+2026-08-14 02:22:32,879 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-14 02:22:38,071 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Abstract' (Images branch not yet merged)
+2026-08-14 02:22:38,071 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-14 02:22:44,413 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Introduction' (Images branch not yet merged)
+2026-08-14 02:22:44,413 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-14 02:23:08,924 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 02:29:00,123 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 02:29:07,960 - rapidoc - INFO - AgentWorker started — topic: 'la', truth_path: preset
+2026-08-14 02:29:07,996 - rapidoc - INFO - Starting orchestration — topic: 'la', sections: ['Abstract', 'Introduction', 'Methodology', 'Results', 'Conclusion']
+2026-08-14 02:29:08,009 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-14 02:29:12,889 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Abstract' (Images branch not yet merged)
+2026-08-14 02:29:12,890 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-14 02:29:18,301 - rapidoc - DEBUG - diagram_inserter: stub called for section 'Introduction' (Images branch not yet merged)
+2026-08-14 02:29:18,301 - rapidoc - INFO - Generating section 3/5: Methodology

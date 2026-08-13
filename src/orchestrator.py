@@ -169,6 +169,7 @@ class AgentState(TypedDict):
     generated_text: str
     stream_chat_callback: Callable[[str], None]
     section_callback: Callable[[str], None]
+    doc_updated_callback: Callable[[], None]
     truth_nodes: list
     section_groups: list
     is_template: bool
@@ -274,8 +275,14 @@ def generate_and_write_section(state: AgentState):
 
                     if chunk_count % 4 == 0:
                         _safe_save(doc, docx_path)
+                        doc_updated_callback = state.get("doc_updated_callback")
+                        if doc_updated_callback:
+                            doc_updated_callback()
 
         _safe_save(doc, docx_path)
+        doc_updated_callback = state.get("doc_updated_callback")
+        if doc_updated_callback:
+            doc_updated_callback()
 
         # Part D.5: call diagram_inserter after body is written
         try:
@@ -302,7 +309,7 @@ def router(state: AgentState):
 # Build graph
 workflow = StateGraph(AgentState)
 workflow.add_node("generate_and_write_section", generate_and_write_section)
-workflow.add_edge(START, "generate_and_write_section")
+workflow.add_conditional_edges(START, router)  # Route at START to handle empty section_groups gracefully
 workflow.add_conditional_edges("generate_and_write_section", router)
 app = workflow.compile()
 
@@ -314,6 +321,7 @@ def run_full_generation(
     docx_path: str,
     stream_chat_callback: Callable[[str], None] = None,
     section_callback: Callable[[str], None] = None,
+    doc_updated_callback: Callable[[], None] = None,
     truth_path: Optional[str] = None,
 ):
     """
@@ -339,6 +347,13 @@ def run_full_generation(
         role = node.get("role", "")
         if section and role in ("section_heading", "body_paragraph") and section not in section_groups:
             section_groups.append(section)
+
+    if not section_groups:
+        raise ValueError(
+            "This template could not be parsed into sections. "
+            "The upload pipeline may have classified all paragraphs as 'body_paragraph' with no section headings. "
+            "Please try re-uploading the template."
+        )
 
     # Reset output docx for a clean run
     if os.path.exists(docx_path):
@@ -367,6 +382,7 @@ def run_full_generation(
         generated_text="",
         stream_chat_callback=stream_chat_callback,
         section_callback=section_callback,
+        doc_updated_callback=doc_updated_callback,
         truth_nodes=truth_nodes,
         section_groups=section_groups,
         is_template=is_template
