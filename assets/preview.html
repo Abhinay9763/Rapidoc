@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Docx Preview</title>
+    <!-- load jszip and docx-preview -->
+    <script src="jszip.min.js"></script>
+    <script src="docx-preview.min.js"></script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #f0f0f0; }
+        #container { width: 100%; height: 100vh; overflow-y: auto; }
+        /* Style adjustments for docx-preview if needed */
+        .docx-wrapper { background-color: #f0f0f0 !important; }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        function renderDocx(base64Data) {
+            console.log("Starting render...");
+            
+            const container = document.getElementById("container");
+            const wasAtBottom = (container.scrollTop + container.clientHeight) >= (container.scrollHeight - 50);
+            
+            // Convert base64 to ArrayBuffer
+            const binaryString = window.atob(base64Data);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            
+            // Render options
+            const options = {
+                className: "docx",
+                inWrapper: true,
+                ignoreWidth: false,
+                ignoreHeight: false,
+                ignoreFonts: false,
+                breakPages: true,
+                ignoreLastRenderedPageBreak: true,
+                experimental: false,
+                trimXmlDeclaration: true,
+                useBase64URL: false,
+                useMathMLPolyfill: false,
+                showChanges: false,
+                debug: false
+            };
+            
+            return docx.renderAsync(bytes.buffer, container, null, options)
+                .then(x => {
+                    if (wasAtBottom) {
+                        container.scrollTop = container.scrollHeight;
+                    }
+                })
+                .catch(e => console.error("docx: error", e));
+        }
+    </script>
+</body>
+</html>
