@@ -71,11 +71,6 @@ class MainWindow(QMainWindow):
         header_layout.addLayout(title_block)
         header_layout.addStretch()
 
-        # Template badge in header
-        self.template_label = QLabel("No template loaded")
-        self.template_label.setObjectName("templateBadge")
-        header_layout.addWidget(self.template_label)
-
         root_layout.addWidget(header)
 
         # ── Main content (splitter) ─────────────────────────────────
@@ -121,6 +116,24 @@ class MainWindow(QMainWindow):
         section_strip_layout.addWidget(self.agent_status_label)
         section_strip_layout.addStretch()
         chat_layout.addWidget(section_strip)
+        
+        # Stats strip
+        stats_strip = QWidget()
+        stats_strip.setObjectName("statsStrip")
+        stats_layout = QHBoxLayout(stats_strip)
+        stats_layout.setContentsMargins(14, 4, 14, 4)
+        
+        self.stats_words_label = QLabel("Words: 0")
+        self.stats_diagrams_label = QLabel("Diagrams: 0")
+        self.stats_time_label = QLabel("Time: 00:00")
+        
+        stats_layout.addWidget(self.stats_words_label)
+        stats_layout.addWidget(QLabel(" | "))
+        stats_layout.addWidget(self.stats_diagrams_label)
+        stats_layout.addWidget(QLabel(" | "))
+        stats_layout.addWidget(self.stats_time_label)
+        stats_layout.addStretch()
+        chat_layout.addWidget(stats_strip)
 
         # Chat history
         self.chat_history = QTextEdit()
@@ -174,7 +187,7 @@ class MainWindow(QMainWindow):
 
         # ── Document setup ──────────────────────────────────────────
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        self.docx_path = os.path.join(os.path.dirname(current_dir), 'assets', 'sample.docx')
+        self.docx_path = os.path.join(os.path.dirname(current_dir), 'assets', 'working.docx')
 
         self.doc_viewer.web_view.loadFinished.connect(self.on_viewer_loaded)
 
@@ -211,6 +224,9 @@ class MainWindow(QMainWindow):
         self.worker.agent_stream_chat.connect(self.on_agent_stream_chat)
         self.worker.agent_section_changed.connect(self.on_agent_section_changed)
         self.worker.agent_doc_updated.connect(self.on_doc_updated)
+        # We will add this signal to AgentWorker next
+        if hasattr(self.worker, 'agent_stats_updated'):
+            self.worker.agent_stats_updated.connect(self.on_agent_stats)
 
         self.worker.start()
         
@@ -224,8 +240,23 @@ class MainWindow(QMainWindow):
         now = datetime.datetime.now().strftime("%H:%M")
         self.chat_history.append(f"<hr><div style='color:#4f46e5; font-size:10px;'>{now}</div><b style='color:#a5b4fc'>⚡ RapiDoc:</b> ")
         self.agent_status_label.setText("⚡ Generating...")
+        
+        self.stats_words_label.setText("Words: 0")
+        self.stats_diagrams_label.setText("Diagrams: 0")
+        self.stats_time_label.setText("Time: 00:00")
+        
         # Stop the heartbeat — the doc_updated signal will drive renders instead
         self.heartbeat_timer.stop()
+        
+    def on_agent_stats(self, stats: dict):
+        self.stats_words_label.setText(f"Words: {stats.get('words', 0)}")
+        self.stats_diagrams_label.setText(f"Diagrams: {stats.get('diagrams', 0)}")
+        
+        # Format time
+        elapsed = int(stats.get('elapsed_seconds', 0))
+        mins = elapsed // 60
+        secs = elapsed % 60
+        self.stats_time_label.setText(f"Time: {mins:02d}:{secs:02d}")
         
     def on_agent_stream_chat(self, chunk: str):
         cursor = self.chat_history.textCursor()
@@ -250,6 +281,10 @@ class MainWindow(QMainWindow):
     def on_agent_error(self, err_msg: str):
         self.append_chat("System Error", err_msg)
         self.current_section = None
+        self.chat_input.setEnabled(True)
+        self.send_button.setEnabled(True)
+        self.chat_input.setFocus()
+        self.agent_status_label.setText("❌ Generation failed")
         
     def on_agent_response(self, response: str):
         self.append_chat("Agent", response)
@@ -275,6 +310,10 @@ class MainWindow(QMainWindow):
         self.load_template_button.setEnabled(False)
         self.load_template_button.setText("Analyzing...")
         self.append_chat("System", f"🔍 Analyzing template: {os.path.basename(path)}...")
+        
+        # Disable chat input while analyzing
+        self.chat_input.setEnabled(False)
+        self.send_button.setEnabled(False)
 
         templates_dir = os.path.join(current_dir, 'templates')
         self._upload_worker = UploadWorker(path, templates_dir)
@@ -296,11 +335,14 @@ class MainWindow(QMainWindow):
             friendly = f"Template: {date_part[:4]}-{date_part[4:6]}-{date_part[6:8]}"
         else:
             friendly = f"Template: {basename}"
-        self.template_label.setText(friendly)
+        
         self.append_chat("System", f"✅ Template analyzed. Ready to generate.")
         self.agent_status_label.setText("")
         self.load_template_button.setText("📂  Load Template")
         self.load_template_button.setEnabled(True)
+        # Re-enable chat input now that analyzing is done
+        self.chat_input.setEnabled(True)
+        self.send_button.setEnabled(True)
         log.info(f"Active truth.json set to: {truth_path}")
 
     def _on_template_error(self, err: str):
@@ -308,6 +350,9 @@ class MainWindow(QMainWindow):
         self.agent_status_label.setText("")
         self.load_template_button.setText("📂  Load Template")
         self.load_template_button.setEnabled(True)
+        # Re-enable chat input
+        self.chat_input.setEnabled(True)
+        self.send_button.setEnabled(True)
         
     def export_pdf(self):
         self.export_button.setEnabled(False)

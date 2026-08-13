@@ -2,20 +2,23 @@ import os
 from docx import Document
 from docx.shared import Inches
 
-def insert_diagram(docx_path: str, image_path: str, caption: str, after_section: str):
+def insert_diagram(docx_path: str, image_path: str, caption: str, after_section: str, doc: Document = None, target_paragraph = None):
     """
     Inserts a diagram into the docx document immediately after the matching section heading,
     followed by a caption.
     """
     try:
-        doc = Document(docx_path)
+        should_save = False
+        if doc is None:
+            doc = Document(docx_path)
+            should_save = True
         
-        target_paragraph = None
-        for p in doc.paragraphs:
-            if after_section.lower() in p.text.lower():
-                target_paragraph = p
-                break
-                
+        if target_paragraph is None:
+            for p in doc.paragraphs:
+                if after_section.lower() in p.text.lower():
+                    target_paragraph = p
+                    break
+                    
         if not target_paragraph:
             print(f"Section heading '{after_section}' not found in {docx_path}")
             return
@@ -41,6 +44,7 @@ def insert_diagram(docx_path: str, image_path: str, caption: str, after_section:
             run_cap = p_cap.add_run(caption)
             run_cap.italic = True
 
-        doc.save(docx_path)
+        if should_save:
+            doc.save(docx_path)
     except Exception as e:
         print(f"Failed to insert diagram: {e}")

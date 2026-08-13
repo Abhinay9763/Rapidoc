@@ -5,7 +5,7 @@ from chart_generator import generate_chart
 from uml_generator import generate_uml_diagram
 from diagram_inserter import insert_diagram
 
-def generate_and_insert_diagram(section_heading: str, section_content: str, docx_path: str) -> bool:
+def generate_and_insert_diagram(section_heading: str, section_content: str, docx_path: str, doc=None, target_paragraph=None) -> bool:
     """Determine diagram type, generate it, and insert into the docx.
 
     Returns True on success, False otherwise. Never raises exceptions.
@@ -39,7 +39,7 @@ def generate_and_insert_diagram(section_heading: str, section_content: str, docx
             return False
         if not img_path or not os.path.exists(img_path):
             return False
-        insert_diagram(docx_path, img_path, caption, section_heading)
+        insert_diagram(docx_path, img_path, caption, section_heading, doc=doc, target_paragraph=target_paragraph)
         return True
     except Exception as e:
         print(f"Error in generate_and_insert_diagram: {e}")

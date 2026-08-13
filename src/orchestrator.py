@@ -55,6 +55,17 @@ def _clear_paragraph_text(p):
     from docx.oxml.ns import qn
     for t_elem in p._element.xpath('.//w:t'):
         t_elem.text = ''
+    
+    # Strip numbering to prevent empty bullets showing up
+    for numPr in p._element.xpath('.//w:pPr/w:numPr'):
+        numPr.getparent().remove(numPr)
+        
+    # If it's explicitly styled as a list, remove the style
+    try:
+        if p.style and 'List' in p.style.name:
+            p.style = p.part.document.styles['Normal']
+    except Exception:
+        pass
 
 
 def _strip_images(doc: Document):
@@ -170,10 +181,16 @@ class AgentState(TypedDict):
     stream_chat_callback: Callable[[str], None]
     section_callback: Callable[[str], None]
     doc_updated_callback: Callable[[], None]
+    stats_callback: Callable[[dict], None]
     truth_nodes: list
     section_groups: list
     is_template: bool
     original_para_count: int
+    mode: str
+    target_sections: list[str]
+    words_generated: int
+    diagrams_generated: int
+    start_time: float
 
 
 # --- Graph node --------------------------------------------------------------
@@ -238,65 +255,85 @@ def generate_and_write_section(state: AgentState):
                 if all_paras and p_idx is not None and p_idx < len(all_paras):
                     _clear_paragraph_text(all_paras[p_idx])  # Safe clear — preserves page breaks
                     
-        client = Groq()
-        prompt = (
-            f"You are writing a section for a document. "
-            f"The section is '{section_name}' and the topic is '{topic}'. "
-            f"First, write a single short sentence explaining what you are writing "
-            f"(this will go to the chat). Then, type exactly '---' on a new line. "
-            f"Finally, write the actual concise academic paragraph "
-            f"(this will go into the document)."
-        )
+        # Generate text unless in diagrams mode
+        if state["mode"] != "diagrams":
+            client = Groq()
+            prompt = (
+                f"You are writing a section for a document. "
+                f"The section is '{section_name}' and the topic is '{topic}'. "
+                f"First, write a single short sentence explaining what you are writing "
+                f"(this will go to the chat). Then, type exactly '---' on a new line. "
+                f"Finally, write the actual concise academic paragraph "
+                f"(this will go into the document)."
+            )
 
-        stream = client.chat.completions.create(
-            messages=[{"role": "user", "content": prompt}],
-            model="llama-3.1-8b-instant",
-            stream=True,
-        )
+            stream = client.chat.completions.create(
+                messages=[{"role": "user", "content": prompt}],
+                model="llama-3.1-8b-instant",
+                stream=True,
+            )
 
-        full_buffer = ""
-        hit_delimiter = False
-        chunk_count = 0
+            full_buffer = ""
+            hit_delimiter = False
+            chunk_count = 0
+            
+            for chunk in stream:
+                text = chunk.choices[0].delta.content
+                if text:
+                    full_buffer += text
 
-        for chunk in stream:
-            text = chunk.choices[0].delta.content
-            if text:
-                full_buffer += text
-
-                if not hit_delimiter:
-                    if "---" in full_buffer:
-                        hit_delimiter = True
-                        parts = full_buffer.split("---", 1)
-                        doc_text = parts[1].lstrip("\n")
-                        if chat_callback:
-                            chat_callback("\n")
+                    if not hit_delimiter:
+                        if "---" in full_buffer:
+                            hit_delimiter = True
+                            parts = full_buffer.split("---", 1)
+                            doc_text = parts[1].lstrip("\n")
+                            if chat_callback:
+                                chat_callback("\n")
+                        else:
+                            if chat_callback:
+                                chat_callback(text)
                     else:
-                        if chat_callback:
-                            chat_callback(text)
-                else:
-                    doc_text += text
-                    time.sleep(0.04)
+                        doc_text += text
+                        if body_run:
+                            body_run.text = doc_text
+                        chunk_count += 1
+                        
+                        if state.get("stats_callback"):
+                            state["stats_callback"]({
+                                "words": state["words_generated"] + len(doc_text.split()),
+                                "diagrams": state["diagrams_generated"],
+                                "elapsed_seconds": time.time() - state["start_time"]
+                            })
 
-                    # Update run text in memory (run-aware — never paragraph.text)
-                    body_run.text = doc_text
-                    chunk_count += 1
+                        if chunk_count % 4 == 0 and state.get("doc_updated_callback"):
+                            _safe_save(doc, docx_path)
+                            state["doc_updated_callback"]()
 
-                    if chunk_count % 4 == 0:
-                        _safe_save(doc, docx_path)
-                        doc_updated_callback = state.get("doc_updated_callback")
-                        if doc_updated_callback:
-                            doc_updated_callback()
+            state["words_generated"] += len(doc_text.split())
+            # Save after text generation
+            _safe_save(doc, docx_path)
+            if state.get("doc_updated_callback"):
+                state["doc_updated_callback"]()
+        else:
+            # In diagram mode, we don't generate new text. We use the existing text for context.
+            doc_text = "\n".join(p.text for p in doc.paragraphs if p.text.strip())
 
-        _safe_save(doc, docx_path)
-        doc_updated_callback = state.get("doc_updated_callback")
-        if doc_updated_callback:
-            doc_updated_callback()
-
-        # Part D.5: call diagram_agent after body is written
+        # --- Phase 5: Diagram Generation (Optional per section) ---
+        # We generate diagrams in full_generation and diagrams mode.
+        # In edit mode, we generally don't generate diagrams unless specifically requested, but it's safe to try.
         try:
             from diagram_agent import generate_and_insert_diagram
-            inserted = generate_and_insert_diagram(section_name, doc_text, docx_path)
+            # Note: diagram_inserter saves the document internally if it created it, but we passed ours so we need to save it.
+            inserted = generate_and_insert_diagram(section_name, doc_text, docx_path, doc=doc, target_paragraph=body_p)
             if inserted:
+                _safe_save(doc, docx_path)
+                state["diagrams_generated"] += 1
+                if state.get("stats_callback"):
+                    state["stats_callback"]({
+                        "words": state["words_generated"],
+                        "diagrams": state["diagrams_generated"],
+                        "elapsed_seconds": time.time() - state["start_time"]
+                    })
                 log.info(f"Diagram inserted for section '{section_name}'")
         except Exception as diagram_err:
             log.warning(f"diagram_inserter failed for '{section_name}': {diagram_err}")
@@ -330,6 +367,7 @@ def run_full_generation(
     stream_chat_callback: Callable[[str], None] = None,
     section_callback: Callable[[str], None] = None,
     doc_updated_callback: Callable[[], None] = None,
+    stats_callback: Callable[[dict], None] = None,
     truth_path: Optional[str] = None,
 ):
     """
@@ -353,8 +391,8 @@ def run_full_generation(
     for node in truth_nodes:
         section = node.get("section")
         role = node.get("role", "")
-        # Filter out TOC entries (which typically contain tab characters like 'CHAPTER 1\t01')
-        if section and "\t" not in section and role in ("section_heading", "body_paragraph") and section not in section_groups:
+        # Filter out TOC entries
+        if section and "\t" not in section and section.lower().strip() not in ("contents", "table of contents") and role in ("section_heading", "body_paragraph") and section not in section_groups:
             section_groups.append(section)
 
     if not section_groups:
@@ -364,27 +402,67 @@ def run_full_generation(
             "Please try re-uploading the template."
         )
 
-    # Reset output docx for a clean run
-    if os.path.exists(docx_path):
-        try:
-            os.remove(docx_path)
-        except Exception:
-            pass
+    # Classify intent
+    from intent_classifier import classify_intent
+    intent = classify_intent(topic, section_groups)
+    mode = intent["mode"]
+    target_sections = intent["target_sections"]
+
+    if stream_chat_callback:
+        if mode == "edit":
+            stream_chat_callback(f"\n[Agent]: Edit mode detected. Targeting sections: {', '.join(target_sections) if target_sections else 'None'}\n\n")
+        elif mode == "diagrams":
+            stream_chat_callback("\n[Agent]: Diagram mode detected. Generating diagrams only.\n\n")
+        else:
+            stream_chat_callback("\n[Agent]: Full generation mode detected.\n\n")
+
+    # If edit mode, filter section groups to only those targeted
+    if mode == "edit" and target_sections:
+        # Fuzzy match target sections to actual sections
+        matched_sections = []
+        for target in target_sections:
+            for sec in section_groups:
+                if target.lower() in sec.lower() or sec.lower() in target.lower():
+                    if sec not in matched_sections:
+                        matched_sections.append(sec)
+        if matched_sections:
+            section_groups = matched_sections
+        else:
+            log.warning(f"Could not match target sections {target_sections} to any available sections. Defaulting to full generation.")
+            mode = "full_generation"
 
     is_template = False
     original_para_count = 0
-    if source_template and os.path.exists(source_template):
-        # We have an uploaded template! Copy it so we preserve page size, margins, and page borders.
-        shutil.copy2(source_template, docx_path)
-        is_template = True
-        # Strip all images from the copy so the web viewer renders cleanly.
-        _img_doc = Document(docx_path)
-        _strip_images(_img_doc)
-        _safe_save(_img_doc, docx_path)
-        original_para_count = len(get_all_paragraphs(_img_doc))
+
+    if mode == "full_generation":
+        # Reset output docx for a clean run
+        if os.path.exists(docx_path):
+            try:
+                os.remove(docx_path)
+            except Exception:
+                pass
+
+        if source_template and os.path.exists(source_template):
+            # We have an uploaded template! Copy it so we preserve page size, margins, and page borders.
+            shutil.copy2(source_template, docx_path)
+            is_template = True
+            # Strip all images from the copy so the web viewer renders cleanly.
+            _img_doc = Document(docx_path)
+            _strip_images(_img_doc)
+            _safe_save(_img_doc, docx_path)
+            original_para_count = len(get_all_paragraphs(_img_doc))
+        else:
+            # Fallback to default blank document
+            _safe_save(Document(), docx_path)
     else:
-        # Fallback to default blank document
-        _safe_save(Document(), docx_path)
+        # Edit or diagram mode: use existing docx_path as-is
+        is_template = True
+        if os.path.exists(docx_path):
+            _img_doc = Document(docx_path)
+            original_para_count = len(get_all_paragraphs(_img_doc))
+        else:
+            # If for some reason working.docx doesn't exist, we must fallback
+            _safe_save(Document(), docx_path)
 
     initial_state = AgentState(
         topic=topic,
@@ -394,13 +472,19 @@ def run_full_generation(
         stream_chat_callback=stream_chat_callback,
         section_callback=section_callback,
         doc_updated_callback=doc_updated_callback,
+        stats_callback=stats_callback,
         truth_nodes=truth_nodes,
         section_groups=section_groups,
         is_template=is_template,
-        original_para_count=original_para_count
+        original_para_count=original_para_count,
+        mode=mode,
+        target_sections=target_sections,
+        words_generated=0,
+        diagrams_generated=0,
+        start_time=time.time()
     )
 
-    log.info(f"Starting orchestration — topic: {topic!r}, sections: {section_groups}")
+    log.info(f"Starting orchestration — topic: {topic!r}, mode: {mode}, sections: {section_groups}")
     final_state = app.invoke(initial_state)
     log.info("Orchestration complete.")
     return final_state

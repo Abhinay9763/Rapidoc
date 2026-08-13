@@ -3877,3 +3877,358 @@ Stderr:
 2026-08-14 02:54:28,962 - rapidoc - INFO - Generating section 5/5: Conclusion
 2026-08-14 02:54:34,890 - rapidoc - INFO - Orchestration complete.
 2026-08-14 02:54:34,892 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-14 03:03:18,234 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 03:04:40,918 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 03:04:44,570 - rapidoc - INFO - Upload pipeline starting for: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:04:44,570 - rapidoc - INFO - Parsing template: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:04:44,750 - rapidoc - INFO - Parsed 180 records from template (180 paragraphs, 0 table cells)
+2026-08-14 03:04:44,750 - rapidoc - INFO - Built 13 formatting clusters from 180 records
+2026-08-14 03:04:44,924 - rapidoc - INFO - Classifying cluster 1/13 (count=1, style='Heading 1', samples=['CONTENTS'])
+2026-08-14 03:04:45,290 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:04:45,290 - rapidoc - INFO - Classifying cluster 2/13 (count=11, style='Normal', samples=['CHAPTER 8- OUTPUT\t08'])
+2026-08-14 03:04:45,436 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:04:45,436 - rapidoc - INFO - Classifying cluster 3/13 (count=2, style='Normal', samples=['(empty)'])
+2026-08-14 03:04:45,579 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:04:45,579 - rapidoc - INFO - Classifying cluster 4/13 (count=11, style='Heading 2', samples=['OUTPUT'])
+2026-08-14 03:04:45,709 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:04:45,709 - rapidoc - INFO - Classifying cluster 5/13 (count=18, style='Body Text', samples=["The system should be configured to run on a 64-bit operating system to ensure compatibility with the project's dependencies and libraries. It is also recommended to use a 4K or higher resolution displ"])
+2026-08-14 03:04:45,861 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:04:45,861 - rapidoc - INFO - Classifying cluster 6/13 (count=76, style='Body Text', samples=['Wiley Publications.'])
+2026-08-14 03:04:46,007 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:04:46,007 - rapidoc - INFO - Classifying cluster 7/13 (count=4, style='Heading 4', samples=['Scope :'])
+2026-08-14 03:04:46,134 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:04:46,134 - rapidoc - INFO - Classifying cluster 8/13 (count=47, style='List Paragraph', samples=['William Stallings'])
+2026-08-14 03:04:46,281 - rapidoc - INFO -   - role=static_boilerplate (confidence=high)
+2026-08-14 03:04:46,281 - rapidoc - INFO - Classifying cluster 9/13 (count=4, style='List Paragraph', samples=['(empty)'])
+2026-08-14 03:04:46,427 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:04:46,427 - rapidoc - INFO - Classifying cluster 10/13 (count=1, style='Heading 4', samples=['Hardware Requirements'])
+2026-08-14 03:04:46,868 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:04:46,868 - rapidoc - INFO - Classifying cluster 11/13 (count=3, style='List Paragraph', samples=['8 GB RAM or more.'])
+2026-08-14 03:04:47,303 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:04:47,319 - rapidoc - INFO - Classifying cluster 12/13 (count=1, style='Heading 5', samples=['Software Requirements'])
+2026-08-14 03:04:47,459 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:04:47,459 - rapidoc - INFO - Classifying cluster 13/13 (count=1, style='Normal', samples=['.'])
+2026-08-14 03:04:51,670 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:04:51,672 - rapidoc - INFO - truth.json written to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030451_baf03dad.truth.json
+2026-08-14 03:04:51,672 - rapidoc - INFO - Summary: 29 section headings, 104 body paragraphs, 47 static boilerplates, 18 figures
+2026-08-14 03:04:51,672 - rapidoc - INFO - Upload pipeline complete in 7.1s - C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030451_baf03dad.truth.json
+2026-08-14 03:04:51,680 - rapidoc - INFO - Active truth.json set to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030451_baf03dad.truth.json
+2026-08-14 03:04:53,484 - rapidoc - INFO - AgentWorker started — topic: 'Make a report on Linear algebra in ML', truth_path: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030451_baf03dad.truth.json
+2026-08-14 03:04:53,647 - rapidoc - INFO - Classifying intent for prompt: 'Make a report on Linear algebra in ML'
+2026-08-14 03:04:53,849 - rapidoc - INFO - Intent classified: {'mode': 'full_generation', 'target_sections': []}
+2026-08-14 03:04:53,855 - rapidoc - ERROR - AgentWorker error: [WinError 32] The process cannot access the file because it is being used by another process
+2026-08-14 03:05:06,174 - rapidoc - INFO - AgentWorker started — topic: 'Make a report on Linear algebra in ML', truth_path: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030451_baf03dad.truth.json
+2026-08-14 03:05:06,343 - rapidoc - INFO - Classifying intent for prompt: 'Make a report on Linear algebra in ML'
+2026-08-14 03:05:06,570 - rapidoc - INFO - Intent classified: {'mode': 'full_generation', 'target_sections': []}
+2026-08-14 03:05:06,623 - rapidoc - INFO - Starting orchestration — topic: 'Make a report on Linear algebra in ML', mode: full_generation, sections: ['CONTENTS', 'ABSTRACT', 'INTRODUCTION', 'Objectives :', 'Scope :', 'LITERATURE SURVEY', 'SYSTEM ANALYSIS', 'Existing System', 'Proposed System', 'SYSTEM REQUIREMENTS', 'Hardware Requirements', 'Software Requirements', 'ALGORITHM', 'SYSTEM IMPLEMENTATION', 'OUTPUT', 'CONCLUSION', 'FUTURE ENHANCEMENTS', 'REFERENCES']
+2026-08-14 03:05:06,629 - rapidoc - INFO - Generating section 1/18: CONTENTS
+2026-08-14 03:05:06,643 - rapidoc - ERROR - Error generating section CONTENTS: No module named 'llm_agent'
+2026-08-14 03:05:06,645 - rapidoc - INFO - Generating section 2/18: ABSTRACT
+2026-08-14 03:05:06,655 - rapidoc - ERROR - Error generating section ABSTRACT: No module named 'llm_agent'
+2026-08-14 03:05:06,658 - rapidoc - INFO - Generating section 3/18: INTRODUCTION
+2026-08-14 03:05:06,674 - rapidoc - ERROR - Error generating section INTRODUCTION: No module named 'llm_agent'
+2026-08-14 03:05:06,679 - rapidoc - INFO - Generating section 4/18: Objectives :
+2026-08-14 03:05:06,693 - rapidoc - ERROR - Error generating section Objectives :: No module named 'llm_agent'
+2026-08-14 03:05:06,710 - rapidoc - INFO - Generating section 5/18: Scope :
+2026-08-14 03:05:06,723 - rapidoc - ERROR - Error generating section Scope :: No module named 'llm_agent'
+2026-08-14 03:05:06,734 - rapidoc - INFO - Generating section 6/18: LITERATURE SURVEY
+2026-08-14 03:05:06,780 - rapidoc - ERROR - Error generating section LITERATURE SURVEY: No module named 'llm_agent'
+2026-08-14 03:05:06,807 - rapidoc - INFO - Generating section 7/18: SYSTEM ANALYSIS
+2026-08-14 03:05:06,818 - rapidoc - ERROR - Error generating section SYSTEM ANALYSIS: No module named 'llm_agent'
+2026-08-14 03:05:06,825 - rapidoc - INFO - Generating section 8/18: Existing System
+2026-08-14 03:05:06,851 - rapidoc - ERROR - Error generating section Existing System: No module named 'llm_agent'
+2026-08-14 03:05:06,866 - rapidoc - INFO - Generating section 9/18: Proposed System
+2026-08-14 03:05:06,875 - rapidoc - ERROR - Error generating section Proposed System: No module named 'llm_agent'
+2026-08-14 03:05:06,876 - rapidoc - INFO - Generating section 10/18: SYSTEM REQUIREMENTS
+2026-08-14 03:05:06,885 - rapidoc - ERROR - Error generating section SYSTEM REQUIREMENTS: No module named 'llm_agent'
+2026-08-14 03:05:06,888 - rapidoc - INFO - Generating section 11/18: Hardware Requirements
+2026-08-14 03:05:06,899 - rapidoc - ERROR - Error generating section Hardware Requirements: No module named 'llm_agent'
+2026-08-14 03:05:06,907 - rapidoc - INFO - Generating section 12/18: Software Requirements
+2026-08-14 03:05:06,914 - rapidoc - ERROR - Error generating section Software Requirements: No module named 'llm_agent'
+2026-08-14 03:05:06,930 - rapidoc - INFO - Generating section 13/18: ALGORITHM
+2026-08-14 03:05:06,943 - rapidoc - ERROR - Error generating section ALGORITHM: No module named 'llm_agent'
+2026-08-14 03:05:06,946 - rapidoc - INFO - Generating section 14/18: SYSTEM IMPLEMENTATION
+2026-08-14 03:05:06,977 - rapidoc - ERROR - Error generating section SYSTEM IMPLEMENTATION: No module named 'llm_agent'
+2026-08-14 03:05:06,981 - rapidoc - INFO - Generating section 15/18: OUTPUT
+2026-08-14 03:05:06,993 - rapidoc - ERROR - Error generating section OUTPUT: No module named 'llm_agent'
+2026-08-14 03:05:06,999 - rapidoc - INFO - Generating section 16/18: CONCLUSION
+2026-08-14 03:05:07,015 - rapidoc - ERROR - Error generating section CONCLUSION: No module named 'llm_agent'
+2026-08-14 03:05:07,023 - rapidoc - INFO - Generating section 17/18: FUTURE ENHANCEMENTS
+2026-08-14 03:05:07,034 - rapidoc - ERROR - Error generating section FUTURE ENHANCEMENTS: No module named 'llm_agent'
+2026-08-14 03:05:07,036 - rapidoc - INFO - Generating section 18/18: REFERENCES
+2026-08-14 03:05:07,048 - rapidoc - ERROR - Error generating section REFERENCES: No module named 'llm_agent'
+2026-08-14 03:05:07,050 - rapidoc - INFO - Orchestration complete.
+2026-08-14 03:05:07,051 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-14 03:07:07,104 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 03:07:11,969 - rapidoc - INFO - Upload pipeline starting for: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:07:11,969 - rapidoc - INFO - Parsing template: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:07:12,150 - rapidoc - INFO - Parsed 180 records from template (180 paragraphs, 0 table cells)
+2026-08-14 03:07:12,151 - rapidoc - INFO - Built 13 formatting clusters from 180 records
+2026-08-14 03:07:12,331 - rapidoc - INFO - Classifying cluster 1/13 (count=1, style='Heading 1', samples=['CONTENTS'])
+2026-08-14 03:07:12,669 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:07:12,670 - rapidoc - INFO - Classifying cluster 2/13 (count=11, style='Normal', samples=['CHAPTER 8- OUTPUT\t08'])
+2026-08-14 03:07:12,811 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:07:12,811 - rapidoc - INFO - Classifying cluster 3/13 (count=2, style='Normal', samples=['(empty)'])
+2026-08-14 03:07:12,943 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:07:12,944 - rapidoc - INFO - Classifying cluster 4/13 (count=11, style='Heading 2', samples=['OUTPUT'])
+2026-08-14 03:07:13,093 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:07:13,094 - rapidoc - INFO - Classifying cluster 5/13 (count=18, style='Body Text', samples=["The system should be configured to run on a 64-bit operating system to ensure compatibility with the project's dependencies and libraries. It is also recommended to use a 4K or higher resolution displ"])
+2026-08-14 03:07:13,247 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:07:13,247 - rapidoc - INFO - Classifying cluster 6/13 (count=76, style='Body Text', samples=['Wiley Publications.'])
+2026-08-14 03:07:13,393 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:07:13,393 - rapidoc - INFO - Classifying cluster 7/13 (count=4, style='Heading 4', samples=['Scope :'])
+2026-08-14 03:07:13,540 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:07:13,540 - rapidoc - INFO - Classifying cluster 8/13 (count=47, style='List Paragraph', samples=['William Stallings'])
+2026-08-14 03:07:13,743 - rapidoc - ERROR - Cluster 8 classification failed: 'list' object has no attribute 'get'. Defaulting to 'body_paragraph'.
+2026-08-14 03:07:13,743 - rapidoc - INFO - Classifying cluster 9/13 (count=4, style='List Paragraph', samples=['(empty)'])
+2026-08-14 03:07:13,892 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:07:13,893 - rapidoc - INFO - Classifying cluster 10/13 (count=1, style='Heading 4', samples=['Hardware Requirements'])
+2026-08-14 03:07:14,055 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:07:14,057 - rapidoc - INFO - Classifying cluster 11/13 (count=3, style='List Paragraph', samples=['8 GB RAM or more.'])
+2026-08-14 03:07:14,224 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:07:14,224 - rapidoc - INFO - Classifying cluster 12/13 (count=1, style='Heading 5', samples=['Software Requirements'])
+2026-08-14 03:07:14,674 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:07:14,675 - rapidoc - INFO - Classifying cluster 13/13 (count=1, style='Normal', samples=['.'])
+2026-08-14 03:07:14,799 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:07:14,812 - rapidoc - INFO - truth.json written to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030714_baf03dad.truth.json
+2026-08-14 03:07:14,812 - rapidoc - INFO - Summary: 29 section headings, 151 body paragraphs, 18 figures
+2026-08-14 03:07:14,812 - rapidoc - INFO - Upload pipeline complete in 2.8s - C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030714_baf03dad.truth.json
+2026-08-14 03:07:14,818 - rapidoc - INFO - Active truth.json set to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030714_baf03dad.truth.json
+2026-08-14 03:07:22,939 - rapidoc - INFO - AgentWorker started — topic: 'make a report on "Linear Algebra in ML"', truth_path: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030714_baf03dad.truth.json
+2026-08-14 03:07:23,114 - rapidoc - INFO - Classifying intent for prompt: 'make a report on "Linear Algebra in ML"'
+2026-08-14 03:07:23,348 - rapidoc - INFO - Intent classified: {'mode': 'full_generation', 'target_sections': []}
+2026-08-14 03:07:23,384 - rapidoc - INFO - Starting orchestration — topic: 'make a report on "Linear Algebra in ML"', mode: full_generation, sections: ['ABSTRACT', 'INTRODUCTION', 'Objectives :', 'Scope :', 'LITERATURE SURVEY', 'SYSTEM ANALYSIS', 'Existing System', 'Proposed System', 'SYSTEM REQUIREMENTS', 'Hardware Requirements', 'Software Requirements', 'ALGORITHM', 'SYSTEM IMPLEMENTATION', 'OUTPUT', 'CONCLUSION', 'FUTURE ENHANCEMENTS', 'REFERENCES']
+2026-08-14 03:07:23,388 - rapidoc - INFO - Generating section 1/17: ABSTRACT
+2026-08-14 03:07:24,897 - rapidoc - INFO - Generating section 2/17: INTRODUCTION
+2026-08-14 03:07:26,032 - rapidoc - INFO - Generating section 3/17: Objectives :
+2026-08-14 03:07:27,397 - rapidoc - INFO - Generating section 4/17: Scope :
+2026-08-14 03:07:28,450 - rapidoc - INFO - Generating section 5/17: LITERATURE SURVEY
+2026-08-14 03:07:29,600 - rapidoc - INFO - Generating section 6/17: SYSTEM ANALYSIS
+2026-08-14 03:07:31,260 - rapidoc - INFO - Generating section 7/17: Existing System
+2026-08-14 03:07:34,697 - rapidoc - INFO - Generating section 8/17: Proposed System
+2026-08-14 03:07:37,217 - rapidoc - INFO - Diagram inserted for section 'Proposed System'
+2026-08-14 03:07:37,218 - rapidoc - INFO - Generating section 9/17: SYSTEM REQUIREMENTS
+2026-08-14 03:07:39,561 - rapidoc - INFO - Diagram inserted for section 'SYSTEM REQUIREMENTS'
+2026-08-14 03:07:39,562 - rapidoc - INFO - Generating section 10/17: Hardware Requirements
+2026-08-14 03:07:40,650 - rapidoc - INFO - Generating section 11/17: Software Requirements
+2026-08-14 03:07:41,786 - rapidoc - INFO - Generating section 12/17: ALGORITHM
+2026-08-14 03:07:44,395 - rapidoc - INFO - Diagram inserted for section 'ALGORITHM'
+2026-08-14 03:07:44,396 - rapidoc - INFO - Generating section 13/17: SYSTEM IMPLEMENTATION
+2026-08-14 03:07:45,577 - rapidoc - INFO - Generating section 14/17: OUTPUT
+2026-08-14 03:07:46,583 - rapidoc - INFO - Generating section 15/17: CONCLUSION
+2026-08-14 03:07:48,163 - rapidoc - INFO - Generating section 16/17: FUTURE ENHANCEMENTS
+2026-08-14 03:07:49,393 - rapidoc - INFO - Generating section 17/17: REFERENCES
+2026-08-14 03:07:52,050 - rapidoc - INFO - Orchestration complete.
+2026-08-14 03:07:52,051 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-14 03:08:31,751 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 03:08:35,171 - rapidoc - INFO - Upload pipeline starting for: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:08:35,171 - rapidoc - INFO - Parsing template: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:08:35,343 - rapidoc - INFO - Parsed 180 records from template (180 paragraphs, 0 table cells)
+2026-08-14 03:08:35,343 - rapidoc - INFO - Built 13 formatting clusters from 180 records
+2026-08-14 03:08:35,521 - rapidoc - INFO - Classifying cluster 1/13 (count=1, style='Heading 1', samples=['CONTENTS'])
+2026-08-14 03:08:35,853 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:08:35,853 - rapidoc - INFO - Classifying cluster 2/13 (count=11, style='Normal', samples=['CHAPTER 8- OUTPUT\t08'])
+2026-08-14 03:08:35,995 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:08:35,995 - rapidoc - INFO - Classifying cluster 3/13 (count=2, style='Normal', samples=['(empty)'])
+2026-08-14 03:08:36,456 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:08:36,458 - rapidoc - INFO - Classifying cluster 4/13 (count=11, style='Heading 2', samples=['OUTPUT'])
+2026-08-14 03:08:36,591 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:08:36,591 - rapidoc - INFO - Classifying cluster 5/13 (count=18, style='Body Text', samples=["The system should be configured to run on a 64-bit operating system to ensure compatibility with the project's dependencies and libraries. It is also recommended to use a 4K or higher resolution displ"])
+2026-08-14 03:08:36,752 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:08:36,752 - rapidoc - INFO - Classifying cluster 6/13 (count=76, style='Body Text', samples=['Wiley Publications.'])
+2026-08-14 03:08:36,895 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:08:36,895 - rapidoc - INFO - Classifying cluster 7/13 (count=4, style='Heading 4', samples=['Scope :'])
+2026-08-14 03:08:37,051 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:08:37,051 - rapidoc - INFO - Classifying cluster 8/13 (count=47, style='List Paragraph', samples=['William Stallings'])
+2026-08-14 03:08:37,202 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:08:37,202 - rapidoc - INFO - Classifying cluster 9/13 (count=4, style='List Paragraph', samples=['(empty)'])
+2026-08-14 03:08:37,362 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:08:37,362 - rapidoc - INFO - Classifying cluster 10/13 (count=1, style='Heading 4', samples=['Hardware Requirements'])
+2026-08-14 03:08:37,512 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:08:37,512 - rapidoc - INFO - Classifying cluster 11/13 (count=3, style='List Paragraph', samples=['8 GB RAM or more.'])
+2026-08-14 03:08:37,662 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:08:37,662 - rapidoc - INFO - Classifying cluster 12/13 (count=1, style='Heading 5', samples=['Software Requirements'])
+2026-08-14 03:08:38,851 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:08:38,851 - rapidoc - INFO - Classifying cluster 13/13 (count=1, style='Normal', samples=['.'])
+2026-08-14 03:08:42,045 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:08:42,057 - rapidoc - INFO - truth.json written to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030842_baf03dad.truth.json
+2026-08-14 03:08:42,057 - rapidoc - INFO - Summary: 29 section headings, 151 body paragraphs, 18 figures
+2026-08-14 03:08:42,057 - rapidoc - INFO - Upload pipeline complete in 6.9s - C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030842_baf03dad.truth.json
+2026-08-14 03:08:42,059 - rapidoc - INFO - Active truth.json set to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030842_baf03dad.truth.json
+2026-08-14 03:08:49,110 - rapidoc - INFO - AgentWorker started — topic: 'Write a project report on "Machine Learning in Linear Algebra"', truth_path: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030842_baf03dad.truth.json
+2026-08-14 03:08:49,271 - rapidoc - INFO - Classifying intent for prompt: 'Write a project report on "Machine Learning in Linear Algebra"'
+2026-08-14 03:08:49,494 - rapidoc - INFO - Intent classified: {'mode': 'full_generation', 'target_sections': []}
+2026-08-14 03:08:49,498 - rapidoc - ERROR - AgentWorker error: [WinError 32] The process cannot access the file because it is being used by another process
+2026-08-14 03:09:00,578 - rapidoc - INFO - AgentWorker started — topic: 'Write a project report on "Machine Learning in Linear Algebra"', truth_path: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_030842_baf03dad.truth.json
+2026-08-14 03:09:00,723 - rapidoc - INFO - Classifying intent for prompt: 'Write a project report on "Machine Learning in Linear Algebra"'
+2026-08-14 03:09:00,962 - rapidoc - INFO - Intent classified: {'mode': 'full_generation', 'target_sections': []}
+2026-08-14 03:09:01,003 - rapidoc - INFO - Starting orchestration — topic: 'Write a project report on "Machine Learning in Linear Algebra"', mode: full_generation, sections: ['ABSTRACT', 'INTRODUCTION', 'Objectives :', 'Scope :', 'LITERATURE SURVEY', 'SYSTEM ANALYSIS', 'Existing System', 'Proposed System', 'SYSTEM REQUIREMENTS', 'Hardware Requirements', 'Software Requirements', 'ALGORITHM', 'SYSTEM IMPLEMENTATION', 'OUTPUT', 'CONCLUSION', 'FUTURE ENHANCEMENTS', 'REFERENCES']
+2026-08-14 03:09:01,007 - rapidoc - INFO - Generating section 1/17: ABSTRACT
+2026-08-14 03:09:03,532 - rapidoc - INFO - Generating section 2/17: INTRODUCTION
+2026-08-14 03:09:04,902 - rapidoc - INFO - Generating section 3/17: Objectives :
+2026-08-14 03:09:06,029 - rapidoc - INFO - Generating section 4/17: Scope :
+2026-08-14 03:09:07,060 - rapidoc - INFO - Generating section 5/17: LITERATURE SURVEY
+2026-08-14 03:09:08,335 - rapidoc - INFO - Generating section 6/17: SYSTEM ANALYSIS
+2026-08-14 03:09:12,531 - rapidoc - INFO - Generating section 7/17: Existing System
+2026-08-14 03:09:15,098 - rapidoc - INFO - Diagram inserted for section 'Existing System'
+2026-08-14 03:09:15,098 - rapidoc - INFO - Generating section 8/17: Proposed System
+2026-08-14 03:09:17,660 - rapidoc - INFO - Generating section 9/17: SYSTEM REQUIREMENTS
+2026-08-14 03:09:20,755 - rapidoc - INFO - Generating section 10/17: Hardware Requirements
+2026-08-14 03:09:23,581 - rapidoc - INFO - Diagram inserted for section 'Hardware Requirements'
+2026-08-14 03:09:23,583 - rapidoc - INFO - Generating section 11/17: Software Requirements
+2026-08-14 03:09:26,289 - rapidoc - INFO - Diagram inserted for section 'Software Requirements'
+2026-08-14 03:09:26,290 - rapidoc - INFO - Generating section 12/17: ALGORITHM
+2026-08-14 03:09:29,324 - rapidoc - INFO - Generating section 13/17: SYSTEM IMPLEMENTATION
+2026-08-14 03:09:32,527 - rapidoc - INFO - Diagram inserted for section 'SYSTEM IMPLEMENTATION'
+2026-08-14 03:09:32,528 - rapidoc - INFO - Generating section 14/17: OUTPUT
+2026-08-14 03:09:33,865 - rapidoc - INFO - Generating section 15/17: CONCLUSION
+2026-08-14 03:09:35,064 - rapidoc - INFO - Generating section 16/17: FUTURE ENHANCEMENTS
+2026-08-14 03:09:36,565 - rapidoc - INFO - Generating section 17/17: REFERENCES
+2026-08-14 03:09:38,029 - rapidoc - INFO - Orchestration complete.
+2026-08-14 03:09:38,030 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-14 03:12:54,419 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 03:13:20,116 - rapidoc - INFO - Upload pipeline starting for: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:13:20,120 - rapidoc - INFO - Parsing template: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:13:20,288 - rapidoc - INFO - Parsed 180 records from template (180 paragraphs, 0 table cells)
+2026-08-14 03:13:20,289 - rapidoc - INFO - Built 13 formatting clusters from 180 records
+2026-08-14 03:13:20,472 - rapidoc - INFO - Classifying cluster 1/13 (count=1, style='Heading 1', samples=['CONTENTS'])
+2026-08-14 03:13:20,867 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:13:20,867 - rapidoc - INFO - Classifying cluster 2/13 (count=11, style='Normal', samples=['CHAPTER 8- OUTPUT\t08'])
+2026-08-14 03:13:21,040 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:13:21,041 - rapidoc - INFO - Classifying cluster 3/13 (count=2, style='Normal', samples=['(empty)'])
+2026-08-14 03:13:21,187 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:13:21,187 - rapidoc - INFO - Classifying cluster 4/13 (count=11, style='Heading 2', samples=['OUTPUT'])
+2026-08-14 03:13:21,323 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:13:21,323 - rapidoc - INFO - Classifying cluster 5/13 (count=18, style='Body Text', samples=["The system should be configured to run on a 64-bit operating system to ensure compatibility with the project's dependencies and libraries. It is also recommended to use a 4K or higher resolution displ"])
+2026-08-14 03:13:21,495 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:13:21,495 - rapidoc - INFO - Classifying cluster 6/13 (count=76, style='Body Text', samples=['Wiley Publications.'])
+2026-08-14 03:13:21,665 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:13:21,667 - rapidoc - INFO - Classifying cluster 7/13 (count=4, style='Heading 4', samples=['Scope :'])
+2026-08-14 03:13:21,809 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:13:21,809 - rapidoc - INFO - Classifying cluster 8/13 (count=47, style='List Paragraph', samples=['William Stallings'])
+2026-08-14 03:13:22,295 - rapidoc - ERROR - Cluster 8 classification failed: 'list' object has no attribute 'get'. Defaulting to 'body_paragraph'.
+2026-08-14 03:13:22,295 - rapidoc - INFO - Classifying cluster 9/13 (count=4, style='List Paragraph', samples=['(empty)'])
+2026-08-14 03:13:22,546 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:13:22,546 - rapidoc - INFO - Classifying cluster 10/13 (count=1, style='Heading 4', samples=['Hardware Requirements'])
+2026-08-14 03:13:22,788 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:13:22,790 - rapidoc - INFO - Classifying cluster 11/13 (count=3, style='List Paragraph', samples=['8 GB RAM or more.'])
+2026-08-14 03:13:22,955 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:13:22,955 - rapidoc - INFO - Classifying cluster 12/13 (count=1, style='Heading 5', samples=['Software Requirements'])
+2026-08-14 03:13:23,208 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:13:23,208 - rapidoc - INFO - Classifying cluster 13/13 (count=1, style='Normal', samples=['.'])
+2026-08-14 03:13:23,370 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:13:23,370 - rapidoc - INFO - truth.json written to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_031323_baf03dad.truth.json
+2026-08-14 03:13:23,370 - rapidoc - INFO - Summary: 29 section headings, 151 body paragraphs, 18 figures
+2026-08-14 03:13:23,370 - rapidoc - INFO - Upload pipeline complete in 3.3s - C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_031323_baf03dad.truth.json
+2026-08-14 03:13:23,370 - rapidoc - INFO - Active truth.json set to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_031323_baf03dad.truth.json
+2026-08-14 03:13:30,101 - rapidoc - INFO - AgentWorker started — topic: 'make a report on "Machine learning in linear algebra"', truth_path: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_031323_baf03dad.truth.json
+2026-08-14 03:13:30,274 - rapidoc - INFO - Classifying intent for prompt: 'make a report on "Machine learning in linear algebra"'
+2026-08-14 03:13:30,485 - rapidoc - INFO - Intent classified: {'mode': 'full_generation', 'target_sections': []}
+2026-08-14 03:13:30,506 - rapidoc - INFO - Starting orchestration — topic: 'make a report on "Machine learning in linear algebra"', mode: full_generation, sections: ['ABSTRACT', 'INTRODUCTION', 'Objectives :', 'Scope :', 'LITERATURE SURVEY', 'SYSTEM ANALYSIS', 'Existing System', 'Proposed System', 'SYSTEM REQUIREMENTS', 'Hardware Requirements', 'Software Requirements', 'ALGORITHM', 'SYSTEM IMPLEMENTATION', 'OUTPUT', 'CONCLUSION', 'FUTURE ENHANCEMENTS', 'REFERENCES']
+2026-08-14 03:13:30,506 - rapidoc - INFO - Generating section 1/17: ABSTRACT
+2026-08-14 03:13:32,184 - rapidoc - INFO - Generating section 2/17: INTRODUCTION
+2026-08-14 03:13:33,501 - rapidoc - INFO - Generating section 3/17: Objectives :
+2026-08-14 03:13:34,341 - rapidoc - INFO - Generating section 4/17: Scope :
+2026-08-14 03:13:35,364 - rapidoc - INFO - Generating section 5/17: LITERATURE SURVEY
+2026-08-14 03:13:36,646 - rapidoc - INFO - Generating section 6/17: SYSTEM ANALYSIS
+2026-08-14 03:13:37,633 - rapidoc - INFO - Generating section 7/17: Existing System
+2026-08-14 03:13:40,649 - rapidoc - INFO - Generating section 8/17: Proposed System
+2026-08-14 03:13:43,332 - rapidoc - INFO - Generating section 9/17: SYSTEM REQUIREMENTS
+2026-08-14 03:13:46,489 - rapidoc - INFO - Generating section 10/17: Hardware Requirements
+2026-08-14 03:13:48,886 - rapidoc - INFO - Diagram inserted for section 'Hardware Requirements'
+2026-08-14 03:13:48,899 - rapidoc - INFO - Generating section 11/17: Software Requirements
+2026-08-14 03:13:50,199 - rapidoc - INFO - Generating section 12/17: ALGORITHM
+2026-08-14 03:13:53,652 - rapidoc - INFO - Diagram inserted for section 'ALGORITHM'
+2026-08-14 03:13:53,656 - rapidoc - INFO - Generating section 13/17: SYSTEM IMPLEMENTATION
+2026-08-14 03:13:57,435 - rapidoc - INFO - Generating section 14/17: OUTPUT
+2026-08-14 03:13:58,466 - rapidoc - INFO - Generating section 15/17: CONCLUSION
+2026-08-14 03:13:59,698 - rapidoc - INFO - Generating section 16/17: FUTURE ENHANCEMENTS
+2026-08-14 03:14:00,709 - rapidoc - INFO - Generating section 17/17: REFERENCES
+2026-08-14 03:14:02,152 - rapidoc - INFO - Orchestration complete.
+2026-08-14 03:14:02,152 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-14 03:15:48,132 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 03:21:34,742 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 03:23:16,915 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 03:23:25,009 - rapidoc - INFO - Upload pipeline starting for: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:23:25,013 - rapidoc - INFO - Parsing template: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:23:25,187 - rapidoc - INFO - Parsed 180 records from template (180 paragraphs, 0 table cells)
+2026-08-14 03:23:25,187 - rapidoc - INFO - Built 13 formatting clusters from 180 records
+2026-08-14 03:23:25,404 - rapidoc - INFO - Classifying cluster 1/13 (count=1, style='Heading 1', samples=['CONTENTS'])
+2026-08-14 03:23:25,769 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:23:25,769 - rapidoc - INFO - Classifying cluster 2/13 (count=11, style='Normal', samples=['CHAPTER 8- OUTPUT\t08'])
+2026-08-14 03:23:25,926 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:23:25,926 - rapidoc - INFO - Classifying cluster 3/13 (count=2, style='Normal', samples=['(empty)'])
+2026-08-14 03:23:26,361 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:23:26,361 - rapidoc - INFO - Classifying cluster 4/13 (count=11, style='Heading 2', samples=['OUTPUT'])
+2026-08-14 03:23:26,487 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:23:26,487 - rapidoc - INFO - Classifying cluster 5/13 (count=18, style='Body Text', samples=["The system should be configured to run on a 64-bit operating system to ensure compatibility with the project's dependencies and libraries. It is also recommended to use a 4K or higher resolution displ"])
+2026-08-14 03:23:26,630 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:23:26,630 - rapidoc - INFO - Classifying cluster 6/13 (count=76, style='Body Text', samples=['Wiley Publications.'])
+2026-08-14 03:23:26,781 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:23:26,781 - rapidoc - INFO - Classifying cluster 7/13 (count=4, style='Heading 4', samples=['Scope :'])
+2026-08-14 03:23:26,913 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:23:26,913 - rapidoc - INFO - Classifying cluster 8/13 (count=47, style='List Paragraph', samples=['William Stallings'])
+2026-08-14 03:23:27,404 - rapidoc - ERROR - Cluster 8 classification failed: 'list' object has no attribute 'get'. Defaulting to 'body_paragraph'.
+2026-08-14 03:23:27,405 - rapidoc - INFO - Classifying cluster 9/13 (count=4, style='List Paragraph', samples=['(empty)'])
+2026-08-14 03:23:27,844 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:23:27,844 - rapidoc - INFO - Classifying cluster 10/13 (count=1, style='Heading 4', samples=['Hardware Requirements'])
+2026-08-14 03:23:28,292 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:23:28,293 - rapidoc - INFO - Classifying cluster 11/13 (count=3, style='List Paragraph', samples=['8 GB RAM or more.'])
+2026-08-14 03:23:28,427 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:23:28,427 - rapidoc - INFO - Classifying cluster 12/13 (count=1, style='Heading 5', samples=['Software Requirements'])
+2026-08-14 03:23:28,559 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:23:28,559 - rapidoc - INFO - Classifying cluster 13/13 (count=1, style='Normal', samples=['.'])
+2026-08-14 03:23:29,751 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:23:29,756 - rapidoc - INFO - truth.json written to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_032329_baf03dad.truth.json
+2026-08-14 03:23:29,756 - rapidoc - INFO - Summary: 29 section headings, 151 body paragraphs, 18 figures
+2026-08-14 03:23:29,756 - rapidoc - INFO - Upload pipeline complete in 4.7s - C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_032329_baf03dad.truth.json
+2026-08-14 03:23:29,768 - rapidoc - INFO - Active truth.json set to: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_032329_baf03dad.truth.json
+2026-08-14 03:23:32,695 - rapidoc - INFO - AgentWorker started — topic: 'asdasd', truth_path: C:\Users\AK-07\Documents\Dev\Rapidoc\templates\uploaded_20260814_032329_baf03dad.truth.json
+2026-08-14 03:23:32,849 - rapidoc - INFO - Classifying intent for prompt: 'asdasd'
+2026-08-14 03:23:33,068 - rapidoc - INFO - Intent classified: {'mode': 'full_generation', 'target_sections': []}
+2026-08-14 03:23:33,139 - rapidoc - INFO - Starting orchestration — topic: 'asdasd', mode: full_generation, sections: ['ABSTRACT', 'INTRODUCTION', 'Objectives :', 'Scope :', 'LITERATURE SURVEY', 'SYSTEM ANALYSIS', 'Existing System', 'Proposed System', 'SYSTEM REQUIREMENTS', 'Hardware Requirements', 'Software Requirements', 'ALGORITHM', 'SYSTEM IMPLEMENTATION', 'OUTPUT', 'CONCLUSION', 'FUTURE ENHANCEMENTS', 'REFERENCES']
+2026-08-14 03:23:33,163 - rapidoc - INFO - Generating section 1/17: ABSTRACT
+2026-08-14 03:23:36,300 - rapidoc - INFO - Generating section 2/17: INTRODUCTION
+2026-08-14 03:23:37,307 - rapidoc - INFO - Generating section 3/17: Objectives :
+2026-08-14 03:24:00,088 - rapidoc - INFO - Web view loaded, rendering docx...
+2026-08-14 03:24:08,867 - rapidoc - INFO - Upload pipeline starting for: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:24:08,868 - rapidoc - INFO - Parsing template: C:/Users/AK-07/Downloads/OS_Project_DM (1).docx
+2026-08-14 03:24:09,038 - rapidoc - INFO - Parsed 180 records from template (180 paragraphs, 0 table cells)
+2026-08-14 03:24:09,039 - rapidoc - INFO - Built 13 formatting clusters from 180 records
+2026-08-14 03:24:09,219 - rapidoc - INFO - Classifying cluster 1/13 (count=1, style='Heading 1', samples=['CONTENTS'])
+2026-08-14 03:24:09,567 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:24:09,568 - rapidoc - INFO - Classifying cluster 2/13 (count=11, style='Normal', samples=['CHAPTER 8- OUTPUT\t08'])
+2026-08-14 03:24:09,716 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:24:09,717 - rapidoc - INFO - Classifying cluster 3/13 (count=2, style='Normal', samples=['(empty)'])
+2026-08-14 03:24:09,853 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:24:09,854 - rapidoc - INFO - Classifying cluster 4/13 (count=11, style='Heading 2', samples=['OUTPUT'])
+2026-08-14 03:24:09,992 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:24:09,992 - rapidoc - INFO - Classifying cluster 5/13 (count=18, style='Body Text', samples=["The system should be configured to run on a 64-bit operating system to ensure compatibility with the project's dependencies and libraries. It is also recommended to use a 4K or higher resolution displ"])
+2026-08-14 03:24:10,154 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:24:10,154 - rapidoc - INFO - Classifying cluster 6/13 (count=76, style='Body Text', samples=['Wiley Publications.'])
+2026-08-14 03:24:10,290 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:24:10,291 - rapidoc - INFO - Classifying cluster 7/13 (count=4, style='Heading 4', samples=['Scope :'])
+2026-08-14 03:24:10,420 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:24:10,420 - rapidoc - INFO - Classifying cluster 8/13 (count=47, style='List Paragraph', samples=['William Stallings'])
+2026-08-14 03:24:10,623 - rapidoc - ERROR - Cluster 8 classification failed: 'list' object has no attribute 'get'. Defaulting to 'body_paragraph'.
+2026-08-14 03:24:10,623 - rapidoc - INFO - Classifying cluster 9/13 (count=4, style='List Paragraph', samples=['(empty)'])
+2026-08-14 03:24:12,805 - rapidoc - INFO -   - role=body_paragraph (confidence=high)
+2026-08-14 03:24:12,806 - rapidoc - INFO - Classifying cluster 10/13 (count=1, style='Heading 4', samples=['Hardware Requirements'])
+2026-08-14 03:24:13,079 - rapidoc - INFO - AgentWorker started — topic: 'asd', truth_path: preset
+2026-08-14 03:24:13,227 - rapidoc - INFO - Classifying intent for prompt: 'asd'
+2026-08-14 03:24:15,487 - rapidoc - INFO - Intent classified: {'mode': 'full_generation', 'target_sections': []}
+2026-08-14 03:24:15,508 - rapidoc - INFO - Starting orchestration — topic: 'asd', mode: full_generation, sections: ['Abstract', 'Introduction', 'Methodology', 'Results', 'Conclusion']
+2026-08-14 03:24:15,515 - rapidoc - INFO - Generating section 1/5: Abstract
+2026-08-14 03:24:18,058 - rapidoc - INFO - Generating section 2/5: Introduction
+2026-08-14 03:24:18,956 - rapidoc - ERROR - Cluster 10 classification failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kga5h4h5fan9syjn2v27ym2s` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5795, Requested 424. Please try again in 2.19s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Defaulting to 'body_paragraph'.
+2026-08-14 03:24:18,956 - rapidoc - INFO - Classifying cluster 11/13 (count=3, style='List Paragraph', samples=['8 GB RAM or more.'])
+2026-08-14 03:24:20,186 - rapidoc - INFO - Generating section 3/5: Methodology
+2026-08-14 03:24:23,439 - rapidoc - INFO - Generating section 4/5: Results
+2026-08-14 03:24:24,933 - rapidoc - INFO - Diagram inserted for section 'Results'
+2026-08-14 03:24:24,935 - rapidoc - INFO - Generating section 5/5: Conclusion
+2026-08-14 03:24:25,103 - rapidoc - ERROR - Cluster 11 classification failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kga5h4h5fan9syjn2v27ym2s` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5828, Requested 476. Please try again in 3.04s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}. Defaulting to 'body_paragraph'.
+2026-08-14 03:24:25,103 - rapidoc - INFO - Classifying cluster 12/13 (count=1, style='Heading 5', samples=['Software Requirements'])
+2026-08-14 03:24:26,335 - rapidoc - INFO - Orchestration complete.
+2026-08-14 03:24:26,336 - rapidoc - INFO - AgentWorker completed successfully.
+2026-08-14 03:24:30,338 - rapidoc - INFO -   - role=section_heading (confidence=high)
+2026-08-14 03:24:30,339 - rapidoc - INFO - Classifying cluster 13/13 (count=1, style='Normal', samples=['.'])

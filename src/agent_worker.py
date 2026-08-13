@@ -11,6 +11,7 @@ class AgentWorker(QThread):
     agent_stream_chat = Signal(str)
     agent_section_changed = Signal(str)
     agent_doc_updated = Signal()   # fires after every incremental docx save
+    agent_stats_updated = Signal(dict)
 
     def __init__(self, docx_path: str, user_message: str, truth_path: str = None, parent=None):
         super().__init__(parent)
@@ -31,6 +32,9 @@ class AgentWorker(QThread):
 
             def doc_updated_callback():
                 self.agent_doc_updated.emit()
+                
+            def stats_callback(stats: dict):
+                self.agent_stats_updated.emit(stats)
 
             run_full_generation(
                 topic=self.user_message,
@@ -38,6 +42,7 @@ class AgentWorker(QThread):
                 stream_chat_callback=stream_chat_callback,
                 section_callback=section_callback,
                 doc_updated_callback=doc_updated_callback,
+                stats_callback=stats_callback,
                 truth_path=self.truth_path,
             )
 

@@ -21,16 +21,16 @@ def select_diagram_type(section_heading: str, section_content: str) -> dict:
     prompt = f"""
 You are a Diagram Generation Agent for academic reports.
 Analyze the following section heading and content. Decide if it needs a visual:
-- "chart": If the section describes quantitative data, trends, or comparisons (needs bar, line, pie, or scatter). Provide 'chart_type', 'data' (x and y values), 'labels', and 'title'.
-- "uml": If the section describes structural, flow, or architectural systems (needs system architecture, sequence, flowchart, class diagram). Provide a 'description' of what the diagram should show.
+- "chart": If the section describes quantitative data, trends, or comparisons. You MUST choose one of the following chart types: 'bar', 'line', 'pie', or 'scatter'. Provide 'chart_type', 'data' (x and y values), 'labels', and 'title'.
+- "uml": If the section describes structural, flow, or architectural systems. You can use any PlantUML diagram, such as: use case, class, object, activity, sequence, component, deployment, state, or timing diagrams. Provide a 'description' of what the diagram should show.
 - "none": If no diagram is needed.
 
 Respond ONLY with valid JSON.
 Example for chart:
-{{"type": "chart", "chart_type": "bar", "data": {{"x": ["A", "B"], "y": [10, 20]}}, "labels": {{"x": "Category", "y": "Value"}}, "title": "Example Chart"}}
+{{"type": "chart", "chart_type": "pie", "data": {{"x": ["A", "B", "C"], "y": [10, 20, 30]}}, "labels": {{"x": "Category", "y": "Value"}}, "title": "Example Distribution"}}
 
 Example for uml:
-{{"type": "uml", "description": "Flowchart showing input to process to output"}}
+{{"type": "uml", "description": "Component diagram showing database, backend, and frontend interactions"}}
 
 Example for none:
 {{"type": "none"}}
