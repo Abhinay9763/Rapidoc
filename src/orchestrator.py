@@ -284,9 +284,9 @@ def generate_and_write_section(state: AgentState):
         if doc_updated_callback:
             doc_updated_callback()
 
-        # Part D.5: call diagram_inserter after body is written
+        # Part D.5: call diagram_agent after body is written
         try:
-            from diagram_inserter import generate_and_insert_diagram
+            from diagram_agent import generate_and_insert_diagram
             inserted = generate_and_insert_diagram(section_name, doc_text, docx_path)
             if inserted:
                 log.info(f"Diagram inserted for section '{section_name}'")
