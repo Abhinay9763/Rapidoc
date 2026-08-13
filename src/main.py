@@ -2,11 +2,11 @@ import sys
 import os
 import threading
 from PySide6.QtWidgets import (
-    QApplication, QMainWindow, QWidget, QVBoxLayout, 
-    QHBoxLayout, QSplitter, QTextEdit, QLineEdit, 
-    QPushButton, QMessageBox, QLabel
+    QApplication, QMainWindow, QWidget, QVBoxLayout,
+    QHBoxLayout, QSplitter, QTextEdit, QLineEdit,
+    QPushButton, QMessageBox, QLabel, QFileDialog
 )
-from PySide6.QtCore import Qt, QTimer
+from PySide6.QtCore import Qt, QTimer, QThread, Signal
 
 from doc_viewer import DocViewer
 from agent_worker import AgentWorker
@@ -16,11 +16,35 @@ from logger import log
 
 load_dotenv()
 
+
+class UploadWorker(QThread):
+    """Background worker that runs the full upload pipeline."""
+    finished = Signal(str)   # emits path to generated truth.json
+    error = Signal(str)
+    status = Signal(str)     # status messages for the chat
+
+    def __init__(self, template_path: str, output_dir: str, parent=None):
+        super().__init__(parent)
+        self.template_path = template_path
+        self.output_dir = output_dir
+
+    def run(self):
+        try:
+            from upload_pipeline import run_upload_pipeline
+            self.status.emit(f"Parsing template: {os.path.basename(self.template_path)}...")
+            truth_path = run_upload_pipeline(self.template_path, self.output_dir)
+            self.finished.emit(truth_path)
+        except Exception as e:
+            log.error(f"Upload pipeline error: {e}")
+            self.error.emit(str(e))
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("RapiDoc - Phase 1 UI Shell")
-        self.resize(1000, 700)
+        self.setWindowTitle("RapiDoc")
+        self.resize(1200, 750)
+        self.active_truth_path = None  # None = preset path; str = uploaded truth.json
+        self.current_section = None
         
         # Central widget and layout
         central_widget = QWidget()
@@ -66,10 +90,24 @@ class MainWindow(QMainWindow):
         input_layout.addWidget(self.send_button)
         chat_layout.addLayout(input_layout)
         
-        # Export PDF button at the bottom of the chat panel
+        # Bottom buttons row
+        bottom_layout = QHBoxLayout()
+
+        self.load_template_button = QPushButton("Load Template")
+        self.load_template_button.setObjectName("loadTemplateButton")
+        self.load_template_button.clicked.connect(self.load_template)
+        bottom_layout.addWidget(self.load_template_button)
+
         self.export_button = QPushButton("Export PDF")
         self.export_button.clicked.connect(self.export_pdf)
-        chat_layout.addWidget(self.export_button)
+        bottom_layout.addWidget(self.export_button)
+
+        chat_layout.addLayout(bottom_layout)
+
+        # Active template label
+        self.template_label = QLabel("Template: Preset")
+        self.template_label.setStyleSheet("color: gray; font-size: 11px;")
+        chat_layout.addWidget(self.template_label)
         
         self.splitter.addWidget(self.chat_panel)
         
@@ -108,14 +146,15 @@ class MainWindow(QMainWindow):
         self.chat_input.setEnabled(False)
         self.send_button.setEnabled(False)
         
-        # Start agent
-        self.worker = AgentWorker(self.docx_path, text)
+        # Start agent — pass active truth path (None = preset)
+        self.worker = AgentWorker(self.docx_path, text, truth_path=self.active_truth_path)
         self.worker.agent_started.connect(self.on_agent_started)
         self.worker.agent_finished.connect(self.on_agent_finished)
         self.worker.agent_error.connect(self.on_agent_error)
         self.worker.agent_response.connect(self.on_agent_response)
         self.worker.agent_stream_chat.connect(self.on_agent_stream_chat)
-        
+        self.worker.agent_section_changed.connect(self.on_agent_section_changed)
+
         self.worker.start()
         
     def append_chat(self, sender: str, message: str):
@@ -141,15 +180,60 @@ class MainWindow(QMainWindow):
         self.send_button.setEnabled(True)
         self.chat_input.setFocus()
         self.agent_status_label.setText("")
+        self.current_section = None
         
     def on_agent_error(self, err_msg: str):
         self.append_chat("System Error", err_msg)
+        self.current_section = None
         
     def on_agent_response(self, response: str):
         self.append_chat("Agent", response)
+        self.current_section = None
         
+    def on_agent_section_changed(self, section_name: str):
+        self.current_section = section_name
+
     def poll_document(self):
-        self.doc_viewer.render_docx(self.docx_path)
+        self.doc_viewer.render_docx(self.docx_path, self.current_section)
+
+    def load_template(self):
+        """Open a .docx file picker, run the upload pipeline, and activate the result."""
+        current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        path, _ = QFileDialog.getOpenFileName(
+            self, "Select Report Template", current_dir,
+            "Word Documents (*.docx)"
+        )
+        if not path:
+            return
+
+        self.load_template_button.setEnabled(False)
+        self.load_template_button.setText("Analyzing...")
+        self.append_chat("System", f"Loading template: {os.path.basename(path)}")
+
+        templates_dir = os.path.join(current_dir, 'templates')
+        self._upload_worker = UploadWorker(path, templates_dir)
+        self._upload_worker.status.connect(
+            lambda msg: self.agent_status_label.setText(msg)
+        )
+        self._upload_worker.finished.connect(self._on_template_loaded)
+        self._upload_worker.error.connect(self._on_template_error)
+        self._upload_worker.start()
+
+    def _on_template_loaded(self, truth_path: str):
+        self.active_truth_path = truth_path
+        name = os.path.basename(truth_path)
+        self.template_label.setText(f"Template: {name}")
+        self.append_chat("System", f"Template analyzed successfully. Using: {name}")
+        self.agent_status_label.setText("")
+        self.load_template_button.setText("Load Template")
+        self.load_template_button.setEnabled(True)
+        log.info(f"Active truth.json set to: {truth_path}")
+
+    def _on_template_error(self, err: str):
+        self.append_chat("System Error", f"Template analysis failed: {err}")
+        self.agent_status_label.setText("")
+        self.load_template_button.setText("Load Template")
+        self.load_template_button.setEnabled(True)
         
     def export_pdf(self):
         self.export_button.setEnabled(False)

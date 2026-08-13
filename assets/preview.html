@@ -10,14 +10,26 @@
         body { margin: 0; padding: 0; background-color: #f0f0f0; }
         #container { width: 100%; height: 100vh; overflow-y: auto; }
         /* Style adjustments for docx-preview if needed */
-        .docx-wrapper { background-color: #f0f0f0 !important; }
+        .docx-wrapper { 
+            background-color: #f0f0f0 !important; 
+            padding: 20px !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .docx-wrapper > section.docx { 
+            background: white !important; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important; 
+            margin-bottom: 20px !important; 
+            border: 1px solid #ccc !important;
+        }
     </style>
 </head>
 <body>
     <div id="container"></div>
     <script>
-        function renderDocx(base64Data) {
-            console.log("Starting render...");
+        function renderDocx(base64Data, searchString) {
+            console.log("Starting render... searchString:", searchString);
             
             const container = document.getElementById("container");
             const wasAtBottom = (container.scrollTop + container.clientHeight) >= (container.scrollHeight - 50);
@@ -38,7 +50,7 @@
                 ignoreHeight: false,
                 ignoreFonts: false,
                 breakPages: true,
-                ignoreLastRenderedPageBreak: true,
+                ignoreLastRenderedPageBreak: false,
                 experimental: false,
                 trimXmlDeclaration: true,
                 useBase64URL: false,
@@ -49,6 +61,15 @@
             
             return docx.renderAsync(bytes.buffer, container, null, options)
                 .then(x => {
+                    if (searchString) {
+                        const allParas = document.querySelectorAll(".docx-wrapper p, .docx-wrapper h1, .docx-wrapper h2, .docx-wrapper h3, .docx-wrapper span");
+                        for (let el of allParas) {
+                            if (el.textContent && el.textContent.includes(searchString)) {
+                                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                return;
+                            }
+                        }
+                    }
                     if (wasAtBottom) {
                         container.scrollTop = container.scrollHeight;
                     }

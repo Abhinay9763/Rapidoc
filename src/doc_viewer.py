@@ -1,5 +1,6 @@
 import os
 import base64
+import json
 from PySide6.QtWidgets import QWidget, QVBoxLayout
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtCore import QUrl
@@ -23,7 +24,7 @@ class DocViewer(QWidget):
         preview_html_path = preview_html_path.replace('\\', '/')
         self.web_view.setUrl(QUrl(f"file:///{preview_html_path}"))
 
-    def render_docx(self, path: str):
+    def render_docx(self, path: str, section_name: str = None):
         if not os.path.exists(path):
             log.error(f"Error: Docx file not found: {path}")
             return
@@ -45,10 +46,11 @@ class DocViewer(QWidget):
                 return
                 
             # Base64 encode
-            b64_data = base64.b64encode(docx_bytes).decode('utf-8')
+            b64 = base64.b64encode(docx_bytes).decode('utf-8')
+            sec_json = json.dumps(section_name) if section_name else "null"
             
             # Execute JS to render
-            js_code = f"if (typeof renderDocx !== 'undefined') {{ renderDocx('{b64_data}'); }}"
+            js_code = f"if (typeof renderDocx !== 'undefined') {{ renderDocx('{b64}', {sec_json}); }}"
             self.web_view.page().runJavaScript(js_code)
         except Exception as e:
             log.error(f"Failed to render docx: {e}")
